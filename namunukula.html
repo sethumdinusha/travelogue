@@ -20,6 +20,151 @@
     <link rel="stylesheet" href="assets/css/Carousel_Image_Slider-mycarousel.css">
     <link rel="stylesheet" href="assets/css/Carousel_Image_Slider.css">
     <link rel="stylesheet" href="assets/css/Lightbox-Gallery-baguetteBox.min.css">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Hero animations */
+        .masthead .brand-heading {
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .masthead .intro-text {
+            animation: fadeInUp 1.2s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-100%);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        #mainNav {
+            animation: slideInDown 0.8s ease-out;
+        }
+
+        /* Scroll reveal animations */
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .scroll-reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .scroll-reveal-left {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .scroll-reveal-left.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .scroll-reveal-right {
+            opacity: 0;
+            transform: translateX(50px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .scroll-reveal-right.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* Image hover effects */
+        .lc-block img {
+            transition: transform 0.4s ease;
+        }
+
+        .lc-block:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            .masthead .brand-heading {
+                font-size: 2em !important;
+            }
+
+            .masthead .intro-text {
+                font-size: 1em !important;
+            }
+
+            .masthead {
+                min-height: 60vh !important;
+                padding-top: 60px !important;
+                padding-bottom: 60px !important;
+            }
+
+            .lead {
+                font-size: 16px !important;
+            }
+
+            h1.fw-bolder {
+                font-size: 24px !important;
+            }
+
+            .container-fluid {
+                padding-left: 15px !important;
+                padding-right: 15px !important;
+            }
+
+            .row {
+                margin-left: 0 !important;
+                margin-right: 0 !important;
+            }
+
+            .col-md-10, .col-xl-5 {
+                padding-left: 10px !important;
+                padding-right: 10px !important;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .masthead .brand-heading {
+                font-size: 1.8em !important;
+            }
+
+            .lead {
+                font-size: 15px !important;
+            }
+
+            h1.fw-bolder {
+                font-size: 22px !important;
+            }
+
+            h2 {
+                font-size: 20px !important;
+            }
+
+            p {
+                font-size: 15px !important;
+            }
+        }
+    </style>
 </head>
 
 <body id="page-top" data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="77">
@@ -49,7 +194,7 @@
     </header>
     <section class="text-center mt-0 mb-0 download-section content-section">
         <div class="container-fluid">
-            <div class="row align-items-center" style="position: relative;transition: all 0.5s ease-in-out;">
+            <div class="row align-items-center scroll-reveal" style="position: relative;transition: all 0.5s ease-in-out;">
                 <div class="col-md-10 col-xl-5 mb-4 mx-auto">
                     <div class="lc-block"><img class="img-fluid mt-4" src="assets/img/IMG_7213.jpg" sizes="" width="" height="" alt="Photo by Alessandro Di Credico"></div>
                 </div>
@@ -63,7 +208,7 @@
                     <div class="d-grid d-lg-block gap-3 lc-block"></div>
                 </div>
             </div>
-            <div class="row align-items-center">
+            <div class="row align-items-center scroll-reveal-left">
                 <div class="col-md-10 col-xl-5 mb-4 mx-auto">
                     <div class="lc-block"><img class="img-fluid" src="assets/img/IMG_7275.jpg" sizes="" width="" height="" alt="Photo by Alessandro Di Credico"></div>
                 </div>
@@ -79,7 +224,7 @@
             </div>
         </div>
         <div class="container-fluid">
-            <div class="row align-items-center">
+            <div class="row align-items-center scroll-reveal-right">
                 <div class="col-md-10 col-xl-5 mb-4 mx-auto">
                     <div class="lc-block"><img class="img-fluid" src="assets/img/IMG_7585.jpg" sizes="" width="" height="" alt="Photo by Alessandro Di Credico"></div>
                 </div>
@@ -94,7 +239,7 @@
                     <div class="d-grid d-lg-block gap-3 lc-block"></div>
                 </div>
             </div>
-            <div class="row align-items-center">
+            <div class="row align-items-center scroll-reveal-left">
                 <div class="col-md-10 col-xl-5 mb-4 mx-auto">
                     <div class="lc-block"><img class="img-fluid" src="assets/img/IMG_7474.jpg" sizes="" width="" height="" alt="Photo by Alessandro Di Credico"></div>
                 </div>
@@ -110,7 +255,7 @@
             </div>
         </div>
         <div class="container-fluid">
-            <div class="row align-items-center">
+            <div class="row align-items-center scroll-reveal-right">
                 <div class="col-md-10 col-xl-5 mb-4 mx-auto">
                     <div class="lc-block"><img class="img-fluid" src="assets/img/IMG_7686.jpg" sizes="" width="" height="" alt="Photo by Alessandro Di Credico"></div>
                 </div>
@@ -127,7 +272,7 @@
             </div>
         </div>
         <div class="container-fluid">
-            <div class="row align-items-center mt-0">
+            <div class="row align-items-center mt-0 scroll-reveal-left">
                 <div class="col-md-10 col-xl-5 mb-4 mx-auto">
                     <div class="lc-block"><img class="img-fluid" src="assets/img/IMG_7776.jpg" sizes="" width="" height="" alt="Photo by Alessandro Di Credico"></div>
                 </div>
@@ -145,7 +290,7 @@
             </div>
         </div>
         <div class="container-fluid">
-            <div class="row align-items-center">
+            <div class="row align-items-center scroll-reveal-right">
                 <div class="col-md-10 col-xl-5 mb-4 mx-auto">
                     <div class="lc-block"><img class="img-fluid" src="assets/img/IMG_7948.jpg" sizes="" width="" height="" alt="Photo by Alessandro Di Credico"></div>
                 </div>
@@ -175,13 +320,13 @@
                 <p style="text-align: left;"></p>
             </div>
         </div>
-        <div class="col-lg-8 mb-0 pb-0 mx-auto">
+        <div class="col-lg-8 mb-0 pb-0 mx-auto scroll-reveal">
             <h2>Essential Tips</h2>
             <p style="font-size: 21px;"><strong>Getting There:</strong> Base in Badulla, hire a vehicle to 3rd Mile Post on Passara-Badulla Road. Split the cost between your group.</p>
             <p style="font-size: 21px;"><strong>What to Bring:</strong> Anti-leech socks (they work way better than spray), waterproof everything, warm layers for camping, at least 3 liters of water, first aid kit.</p>
             <p style="font-size: 21px;"><strong>Key Info:</strong> Height 2,036m • Duration 7-9 hours • Difficulty: Challenging • Best time: March-September • Don't go solo, ideal group 4-8 people.</p>
         </div>
-        <div class="col-lg-8 mb-0 pb-0 mx-auto">
+        <div class="col-lg-8 mb-0 pb-0 mx-auto scroll-reveal">
             <h2 class="mt-6"><strong>Would I Do It Again?</strong></h2>
             <p class="mb-0" style="font-size: 21px;text-align: center;">In a heartbeat. But I'd wake up on time, Namunukula isn't Sigiriya with its crowds or Ella Rock with its Instagram fame. This is raw, challenging, unpredictable, and absolutely worth every slippery step. The rain, the mud, even the scary midnight moment—all of it made it real.&nbsp;<br>We missed the bus, got soaked, slipped in mud, had a health scare, and it was still one of the best weekends of my life.<br><br><br></p>
             <p class="mt-0" style="font-size: 21px;font-weight: bold;"><em>If you're thinking about it, stop thinking and just plan it. Get good friends together. Set multiple alarms. And bring those anti-leech socks.</em></p>
@@ -216,404 +361,23 @@
         </div>
     </footer>
     <script>
-        (function() {
-            let collections = document.querySelectorAll('[data-bss-type="blog-loop"]');
-            let tagNavs = document.querySelectorAll('[data-bss-type="tag-nav"]');
-            let tagLoops = document.querySelectorAll('[data-bss-type="tag-loop"]');
-            let authorLoops = document.querySelectorAll('[data-bss-type="author-loop"]');
-            let authorNavs = document.querySelectorAll('[data-bss-type="author-nav"]');
-
-            window.addEventListener("popstate", (e) => {
-                for (let collection of collections) {
-                    updateCollection(collection);
-                }
-
-                for (let tagNav of tagNavs) {
-                    updateTagNav(tagNav);
-                }
-
-                for (let authorNav of authorNavs) {
-                    updateAuthorNav(authorNav);
+        // Scroll reveal animation
+        function revealOnScroll() {
+            const reveals = document.querySelectorAll('.scroll-reveal, .scroll-reveal-left, .scroll-reveal-right');
+            
+            reveals.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (elementTop < windowHeight - 100) {
+                    element.classList.add('visible');
                 }
             });
-
-            for (let collection of collections) {
-
-                updateCollection(collection);
-
-                if (!canPaginateCollection(collection)) continue;
-
-                let pagination = collection.querySelector('[data-bss-type="blog-loop-pagination"]');
-
-                pagination.addEventListener('click', function(e) {
-                    let paginationItem = e.target.closest('.page-item');
-                    if (!paginationItem) return;
-
-                    e.preventDefault();
-
-                    if (paginationItem.classList.contains('disabled') || paginationItem.classList.contains('active')) return;
-
-                    let collection = paginationItem.closest('[data-bss-type="blog-loop"]');
-                    if (!collection) return;
-
-                    let page = parseInt(paginationItem.dataset.page);
-                    if (!page) return;
-
-                    let pageParam = getPageParameter(collection);
-
-                    if (pageParam) {
-                        const url = new URL(window.location);
-                        url.searchParams.set(pageParam, page);
-                        history.pushState({
-                            [pageParam]: page
-                        }, document.title, url);
-
-                        for (let c of collections) {
-                            let param = getPageParameter(c);
-                            if (param !== pageParam) continue;
-                            updateCollection(c);
-                        }
-                    } else {
-                        updateCollection(collection, page);
-                    }
-                });
-            }
-
-            for (let tagNav of tagNavs) {
-                updateTagNav(tagNav);
-                tagNav.addEventListener('click', onTagClick);
-            }
-
-            for (let tagLoop of tagLoops) {
-                tagLoop.addEventListener('click', onTagClick);
-            }
-
-            for (let authorLoop of authorLoops) {
-                authorLoop.addEventListener('click', onAuthorClick);
-            }
-
-            for (let authorNav of authorNavs) {
-                updateAuthorNav(authorNav);
-            }
-
-            function onTagClick(e) {
-                onBlogFilterClick(e);
-
-                for (let nav of tagNavs) {
-                    updateTagNav(nav);
-                }
-            }
-
-            function onAuthorClick(e) {
-                onBlogFilterClick(e);
-
-                for (let authorNav of authorNavs) {
-                    updateAuthorNav(authorNav);
-                }
-            }
-
-            function onBlogFilterClick(e) {
-                const item = e.target.closest('[data-bss-filter="blog"]');
-                if (!item || !item.dataset.hasOwnProperty('bssHref') || !item.dataset.hasOwnProperty('bssFilterParam')) return;
-
-                const stateNode = item.dataset.hasOwnProperty('bssStateNode') ? item : item.querySelector('[data-bss-state-node]');
-
-                if (stateNode && (stateNode.classList.contains('disabled') || stateNode.classList.contains('active'))) {
-                    e.preventDefault();
-                    return;
-                }
-
-                const link = item.dataset.bssHref;
-                if (!linksToCurrentPage(link)) return;
-
-                e.preventDefault();
-
-                const url = new URL(window.location);
-                const filterParam = item.dataset.bssFilterParam;
-                const filterValue = item.dataset.bssFilterValue || '';
-
-                const collectionsToUpdate = [];
-                const newQueryParams = {
-                    [filterParam]: filterValue
-                };
-
-                for (let c of collections) {
-                    if (!canFilterCollection(c)) continue;
-                    collectionsToUpdate.push(c);
-
-                    let pageParam = getPageParameter(c);
-                    let page = url.searchParams.get(pageParam);
-                    if (page === null || page == 1) continue;
-
-                    newQueryParams[pageParam] = 1;
-                }
-
-                for (let param in newQueryParams) {
-                    if (newQueryParams[param]) {
-                        url.searchParams.set(param, newQueryParams[param]);
-                    } else {
-                        url.searchParams.delete(param);
-                    }
-                }
-
-                history.pushState(newQueryParams, document.title, url);
-
-                for (let c of collectionsToUpdate) {
-                    updateCollection(c);
-                }
-            }
-
-            function getCollectionFilters(collection) {
-                let filters = [];
-
-                try {
-                    const parsed = JSON.parse(collection.dataset.bssFilters);
-
-                    if (Array.isArray(parsed)) {
-                        filters = parsed;
-                    }
-                } catch (e) {}
-
-                return filters;
-            }
-
-            function getCollectionEmptyFilterAction(collection, filter = '') {
-                let emptyFilterActions = [];
-
-                try {
-                    const parsed = JSON.parse(collection.dataset.bssEmptyFilterActions);
-
-                    if (Array.isArray(parsed)) {
-                        emptyFilterActions = parsed;
-                    }
-                } catch (e) {}
-
-                const action = emptyFilterActions.find(action => action.filter === filter);
-
-                return action ? action.value : '';
-            }
-
-            function canFilterCollection(collection) {
-                return !!getCollectionFilters(collection).length;
-            }
-
-            function canFilterCollectionByTag(collection) {
-                return getCollectionFilters(collection).includes('tag');
-            }
-
-            function canFilterCollectionByAuthor(collection) {
-                return getCollectionFilters(collection).includes('author');
-            }
-
-            function shouldShowAllItemsForEmptyFilter(collection, filter = '') {
-                return getCollectionEmptyFilterAction(collection, filter) === 'show-all';
-            }
-
-            function canPaginateCollection(collection) {
-                return !!getCollectionPagination(collection);
-            }
-
-            function getCollectionPagination(collection) {
-                return collection.querySelector('[data-bss-type="blog-loop-pagination"]');
-            }
-
-            function getPageParameter(collection) {
-                return collection.dataset.bssPageParam;
-            }
-
-            function linksToCurrentPage(path = '') {
-                let currentURL, url;
-
-                try {
-                    currentURL = new URL(window.location);
-                    url = new URL(path, window.location.href);
-                } catch (e) {
-                    console.error(e);
-                }
-
-                return currentURL.origin === url.origin && currentURL.pathname === url.pathname;
-            }
-
-            function updateCollection(collection, page, activeTag = '', activeAuthor = '') {
-
-                const url = new URL(window.location.href);
-
-                if (canPaginateCollection(collection)) {
-                    if (!page) {
-                        let pageParam = getPageParameter(collection);
-                        page = (pageParam ? url.searchParams.get(pageParam) : 1) || 1;
-                    }
-                }
-
-                if (canFilterCollectionByTag(collection) && !activeTag) {
-                    let tagParam = 'tag';
-                    activeTag = url.searchParams.get(tagParam) || '';
-                }
-
-                if (canFilterCollectionByAuthor(collection) && !activeAuthor) {
-                    let authorParam = 'author';
-                    activeAuthor = url.searchParams.get(authorParam) || '';
-                }
-
-                renderCollectionPage(collection, page, activeTag, activeAuthor);
-            }
-
-            function renderCollectionPage(collection, page = 1, activeTag = '', activeAuthor = '') {
-
-                page = Math.max(parseInt(page, 10), 1);
-
-                collection.style.removeProperty('display');
-
-                let loopBase = collection.querySelector('[data-bss-type="blog-loop-base"]');
-                loopBase && loopBase.style.removeProperty('display');
-
-                let emptyState = collection.querySelector('[data-bss-type="empty-state"]');
-                emptyState && emptyState.style.setProperty('display', 'none', 'important');
-
-                let listItems = [].slice.call(collection.querySelectorAll('[data-bss-type="blog-loop-item"]'));
-                listItems.forEach(item => item.style.setProperty('display', 'none', 'important'));
-
-                if (canFilterCollectionByTag(collection)) {
-                    listItems = listItems.filter(item => activeTag ? item.classList.contains('post-tag-' + activeTag) : shouldShowAllItemsForEmptyFilter(collection, 'tag'));
-                }
-
-                if (canFilterCollectionByAuthor(collection)) {
-                    listItems = listItems.filter(item => activeAuthor ? item.classList.contains('post-author-' + activeAuthor) : shouldShowAllItemsForEmptyFilter(collection, 'author'));
-                }
-
-                let perPage = collection.dataset.bssPerpage || listItems.length;
-                let visibleListItems = listItems.slice((page - 1) * perPage, page * perPage);
-                visibleListItems.forEach(item => item.style.removeProperty('display'));
-
-                let isEmpty = !visibleListItems.length;
-
-                if (isEmpty) {
-                    loopBase && loopBase.style.setProperty('display', 'none', 'important');
-                    emptyState && emptyState.style.removeProperty('display');
-                }
-
-                let itemCount = listItems.length;
-                let pageCount = Math.max(Math.ceil(itemCount / perPage), 1);
-
-                updateCollectionPagination(collection, page, pageCount, isEmpty);
-
-                if (collection.dataset.bssScrollOnChange) {
-                    scrollToCollectionTop(collection);
-                }
-            }
-
-            function updateCollectionPagination(collection, page, pageCount, isEmpty) {
-                let pagination = getCollectionPagination(collection);
-                if (!pagination) return;
-
-                let paginationItems = [].slice.call(pagination.querySelectorAll('.page-item'));
-
-                if (pageCount === 1 || isEmpty) {
-                    pagination.style.setProperty('display', 'none', 'important');
-                } else {
-                    pagination.style.removeProperty('display');
-                }
-
-                let previousBtnDisabled = page - 1 <= 0;
-                let previousPage = previousBtnDisabled ? 1 : page - 1;
-
-                let nextBtnDisabled = page + 1 > pageCount;
-                let nextPage = nextBtnDisabled ? pageCount : page + 1;
-
-                for (let i = 0; i < paginationItems.length; i++) {
-                    let paginationItem = paginationItems[i];
-
-                    paginationItem.classList.remove('active', 'disabled');
-
-                    if (paginationItem.dataset.type === 'prev') {
-                        paginationItem.dataset.page = previousPage;
-
-                        if (previousBtnDisabled) {
-                            paginationItem.classList.add('disabled');
-                        }
-                    } else if (paginationItem.dataset.type === 'next') {
-                        paginationItem.dataset.page = nextPage;
-
-                        if (nextBtnDisabled) {
-                            paginationItem.classList.add('disabled');
-                        }
-                    } else {
-                        if (paginationItem.dataset.page > pageCount) {
-                            paginationItem.style.setProperty('display', 'none', 'important');
-                        } else {
-                            paginationItem.style.removeProperty('display');
-                        }
-
-                        if (paginationItem.dataset.page == page) {
-                            paginationItem.classList.add('active');
-                        }
-                    }
-                }
-            }
-
-            function scrollToCollectionTop(collection) {
-                const rect = collection.getBoundingClientRect();
-                const viewHeight = Math.max(document.documentElement.clientHeight, window.innerHeight);
-                const threshold = 100;
-
-                if (rect.top >= 0 && viewHeight - rect.top > threshold) return;
-
-                setTimeout(() => {
-                    collection.scrollIntoView({
-                        behavior: "smooth",
-                        block: "start",
-                        inline: "start"
-                    });
-                }, 0);
-            }
-
-            function updateTagNav(tagNav) {
-                const url = new URL(window.location.href);
-
-                let tagParam = 'tag';
-                let tag = url.searchParams.get(tagParam) || '';
-
-                renderTagNav(tagNav, tag);
-            }
-
-            function renderTagNav(tagNav, activeTag = '') {
-                if (!tagNav.dataset.bssSyncUrl) return;
-
-                let navItems = [].slice.call(tagNav.querySelectorAll('[data-bss-type="tag-loop-item"]'));
-
-                navItems.forEach(item => {
-                    const activeClassNode = item.dataset.hasOwnProperty('bssStateNode') ? item : item.querySelector('[data-bss-state-node]');
-                    if (!activeClassNode) return;
-
-                    activeClassNode.classList.remove('active');
-
-                    const link = item.dataset.bssHref;
-                    if (!linksToCurrentPage(link) || activeClassNode.classList.contains('disabled')) return;
-
-                    if (item.dataset.bssTag === activeTag) {
-                        activeClassNode.classList.add('active');
-                    }
-                });
-            }
-
-            function updateAuthorNav(authorNav) {
-                const url = new URL(window.location.href);
-
-                let authorParam = 'author';
-                let author = url.searchParams.get(authorParam) || '';
-
-                renderAuthorNav(authorNav, author);
-            }
-
-            function renderAuthorNav(authorNav, activeAuthor = '') {
-                if (!canFilterCollectionByAuthor(authorNav)) return;
-
-                authorNav.style.removeProperty('display');
-
-                let items = [].slice.call(authorNav.querySelectorAll('[data-bss-type="author-loop-item"]'));
-                items.forEach(item => item.classList.contains('author-' + activeAuthor) ? item.style.removeProperty('display') : item.style.setProperty('display', 'none', 'important'));
-            }
-        })();
+        }
+
+        // Run on load and scroll
+        window.addEventListener('scroll', revealOnScroll);
+        window.addEventListener('load', revealOnScroll);
     </script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
