@@ -72,67 +72,84 @@
 
         /* Text focus with modern backdrop blur */
         .text-focus {
-            background: rgba(0, 0, 0, 0.4);
+            background: rgba(0, 0, 0, 0.5);
             backdrop-filter: blur(8px);
             -webkit-backdrop-filter: blur(8px);
-            padding: 40px 20px;
+            padding: 40px 25px;
             border-radius: 15px;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-            margin: 0 15px;
+            margin: 0 auto;
+            max-width: 100%;
         }
 
         /* Mobile responsiveness */
         @media (max-width: 768px) {
             .text-focus {
-                padding: 30px 15px;
-                margin: 0 10px;
+                padding: 25px 20px;
+                margin: 0 15px;
+                border-radius: 10px;
             }
 
             .text-focus h2 {
-                font-size: 24px !important;
+                font-size: 22px !important;
                 margin: 15px 0 !important;
+                height: auto !important;
             }
 
             .text-focus h3 {
                 font-size: 18px !important;
+                margin: 15px 0 !important;
             }
 
             .text-focus p {
-                font-size: 16px !important;
+                font-size: 15px !important;
                 line-height: 1.6;
+                text-align: left !important;
+            }
+
+            .text-focus ul {
+                text-align: left;
+                padding-left: 20px;
             }
 
             .text-focus ul li {
-                font-size: 15px;
+                font-size: 14px;
+                text-align: left;
             }
 
             .banner-social-buttons {
                 padding: 0;
+                margin-top: 20px;
             }
 
             .banner-social-buttons .list-inline-item {
                 display: block;
-                margin-bottom: 15px;
+                margin: 0 0 15px 0 !important;
             }
 
             .btn-default {
-                width: 100%;
-                max-width: 280px;
+                width: 100% !important;
+                max-width: 100% !important;
+                font-size: 16px !important;
             }
         }
 
         @media (max-width: 576px) {
             .text-focus {
-                padding: 25px 12px;
-                margin: 0 5px;
+                padding: 20px 15px;
+                margin: 0 10px;
             }
 
             .text-focus h2 {
-                font-size: 22px !important;
+                font-size: 20px !important;
             }
 
             .text-focus p {
-                font-size: 15px !important;
+                font-size: 14px !important;
+            }
+
+            .text-focus ul li {
+                font-size: 13px;
             }
         }
 
@@ -249,10 +266,10 @@
             </div>
         </div>
     </nav>
-    <section class="text-center content-section" id="about" style="margin-top: -49px;margin-bottom: -83px;padding-top: 103px;background: url(&quot;assets/img/IMG_6915.jpg&quot;) center / cover, var(--bs-success-text-emphasis);">
+    <section class="text-center content-section" id="about" style="margin-top: -49px;margin-bottom: -83px;padding-top: 103px;padding-bottom: 100px;background: url(&quot;assets/img/IMG_6915.jpg&quot;) center / cover, var(--bs-success-text-emphasis);">
         <div class="container">
             <div class="row mt-0">
-                <div class="col-lg-8 mt-0 pt-0 mx-auto text-focus scroll-reveal">
+                <div class="col-12 col-lg-8 mt-0 pt-0 mx-auto text-focus scroll-reveal">
                     <h2 class="pt-0" style="font-weight: bold;height: 32.1px;margin: 22px;font-family: Aclonica, sans-serif;">About Travelogue</h2>
                     <p style="text-align: center;font-size: 19px;">Hi! I'm Sethum Dinusha, a Mechanical Engineering Technologist&nbsp;studying at Uva Wellassa University.<br>Beyond engineering, I'm passionate about exploring new places&nbsp;and documenting my travel adventures. From mountain peaks to&nbsp;hidden beaches, I love discovering the beauty of Sri Lanka&nbsp;and sharing these experiences.<br>This blog is my journey - a collection of travel stories,&nbsp;<br>tips, and the incredible moments I've captured along the way. Join me as I explore, learn, and grow through every adventure!</p>
                     <h3 style="font-size: 20.1px;font-family: Aclonica, sans-serif;font-weight: bold;color: var(--bs-warning);margin: 22px 0;">What You'll Find Here:</h3>
@@ -300,10 +317,10 @@
             </div>
         </div>
     </section>
-    <section class="text-center content-section" id="contact" style="background: url(&quot;assets/img/IMG_6612.jpg&quot;) center / cover;">
+    <section class="text-center content-section" id="contact" style="padding-top: 100px;padding-bottom: 100px;background: url(&quot;assets/img/IMG_6612.jpg&quot;) center / cover;">
         <div class="container">
             <div class="row">
-                <div class="col-lg-8 mb-2 mx-auto text-focus scroll-reveal">
+                <div class="col-12 col-lg-8 mb-2 mx-auto text-focus scroll-reveal">
                     <h2 class="mt-4" style="font-family: Aclonica, sans-serif;">Contact Me</h2>
                     <p style="font-size: 20px;">Connect with me on social media. I'm just a click away!</p>
                     <ul class="list-inline banner-social-buttons">
