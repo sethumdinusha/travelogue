@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Namunukula - Brand</title>
+    <title>Narangala - Brand</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic&amp;display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cabin:700&amp;display=swap">
@@ -20,6 +20,170 @@
     <link rel="stylesheet" href="assets/css/Carousel_Image_Slider-mycarousel.css">
     <link rel="stylesheet" href="assets/css/Carousel_Image_Slider.css">
     <link rel="stylesheet" href="assets/css/Lightbox-Gallery-baguetteBox.min.css">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Hero animations */
+        .masthead .brand-heading {
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .masthead .intro-text {
+            animation: fadeInUp 1.2s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-100%);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        #mainNav {
+            animation: slideInDown 0.8s ease-out;
+        }
+
+        /* Scroll reveal animations */
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .scroll-reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .scroll-reveal-left {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .scroll-reveal-left.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .scroll-reveal-right {
+            opacity: 0;
+            transform: translateX(50px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .scroll-reveal-right.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* Image hover effects */
+        .lc-block img, .fancybox img {
+            transition: transform 0.4s ease;
+            display: block;
+            width: 100%;
+        }
+
+        .lc-block:hover img, .fancybox:hover img {
+            transform: scale(1.05);
+        }
+
+        .fancybox {
+            overflow: hidden;
+            display: block;
+        }
+
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            .masthead .brand-heading {
+                font-size: 2em !important;
+            }
+
+            .masthead .intro-text {
+                font-size: 1em !important;
+            }
+
+            .masthead {
+                min-height: 60vh !important;
+                padding-top: 60px !important;
+                padding-bottom: 60px !important;
+            }
+
+            .lead {
+                font-size: 16px !important;
+            }
+
+            h1.fw-bolder {
+                font-size: 24px !important;
+            }
+
+            h2 {
+                font-size: 22px !important;
+            }
+
+            .container-fluid {
+                padding-left: 15px !important;
+                padding-right: 15px !important;
+            }
+
+            .row {
+                margin-left: 0 !important;
+                margin-right: 0 !important;
+            }
+
+            .col-md-10, .col-xl-5, .col-sm-4 {
+                padding-left: 10px !important;
+                padding-right: 10px !important;
+            }
+
+            p[style*="font-size: 21px"] {
+                font-size: 16px !important;
+            }
+
+            p[style*="font-size: 22px"] {
+                font-size: 16px !important;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .masthead .brand-heading {
+                font-size: 1.8em !important;
+            }
+
+            .lead {
+                font-size: 15px !important;
+            }
+
+            h1.fw-bolder {
+                font-size: 22px !important;
+            }
+
+            h2 {
+                font-size: 20px !important;
+            }
+
+            p {
+                font-size: 14px !important;
+            }
+        }
+    </style>
 </head>
 
 <body id="page-top" data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="77">
@@ -49,7 +213,7 @@
     </header>
     <section class="text-center mt-0 pt-10 mb-0 download-section content-section" style="line-height: 24px;">
         <div class="container-fluid">
-            <div class="row align-items-center" style="position: relative;transition: all 0.5s ease-in-out;">
+            <div class="row align-items-center scroll-reveal" style="position: relative;transition: all 0.5s ease-in-out;">
                 <div class="col-md-10 col-xl-5 mb-4 mx-auto">
                     <div class="lc-block"><img class="img-fluid mt-4" src="assets/img/IMG_6379.jpg" sizes="" width="" height="" alt="Photo by Alessandro Di Credico"></div>
                 </div>
@@ -66,7 +230,7 @@
             </div>
         </div>
         <div class="container-fluid">
-            <div class="row align-items-center">
+            <div class="row align-items-center scroll-reveal-left">
                 <div class="col-md-10 col-xl-5 mb-4 mx-auto">
                     <div class="lc-block"><img class="img-fluid" src="assets/img/IMG_6398.jpg" sizes="" width="" height="" alt="Photo by Alessandro Di Credico"></div>
                 </div>
@@ -84,7 +248,7 @@
             </div>
         </div>
         <div class="container-fluid">
-            <div class="row align-items-center">
+            <div class="row align-items-center scroll-reveal-right">
                 <div class="col-md-10 col-xl-5 mb-4 mx-auto">
                     <div class="lc-block"><img class="img-fluid" src="assets/img/IMG_6426.jpg" sizes="" width="" height="" alt="Photo by Alessandro Di Credico"></div>
                 </div>
@@ -101,7 +265,7 @@
             </div>
         </div>
         <div class="container-fluid">
-            <div class="row align-items-center mt-0">
+            <div class="row align-items-center mt-0 scroll-reveal-left">
                 <div class="col-md-10 col-xl-5 mb-4 mx-auto">
                     <div class="lc-block"><img class="img-fluid" src="assets/img/IMG_6407.jpg" sizes="" width="" height="" alt="Photo by Alessandro Di Credico"></div>
                 </div>
@@ -118,7 +282,7 @@
             </div>
         </div>
         <div class="container-fluid">
-            <div class="row align-items-center">
+            <div class="row align-items-center scroll-reveal-right">
                 <div class="col-md-10 col-xl-5 mb-4 mx-auto">
                     <div class="lc-block"><img class="img-fluid" src="assets/img/IMG_6390.jpg" sizes="" width="" height="" alt="Photo by Alessandro Di Credico"></div>
                 </div>
@@ -133,7 +297,7 @@
                     <div class="d-grid d-lg-block gap-3 lc-block"></div>
                 </div>
             </div>
-            <div class="row align-items-center">
+            <div class="row align-items-center scroll-reveal-left">
                 <div class="col-md-10 col-xl-5 mb-4 mx-auto">
                     <div class="lc-block"><img class="img-fluid" src="assets/img/IMG_6396.jpg" sizes="" width="" height="" alt="Photo by Alessandro Di Credico"></div>
                 </div>
@@ -148,7 +312,7 @@
                     <div class="d-grid d-lg-block gap-3 lc-block"></div>
                 </div>
             </div>
-            <div class="row align-items-center">
+            <div class="row align-items-center scroll-reveal-right">
                 <div class="col-md-10 col-xl-5 mb-4 mx-auto">
                     <div class="lc-block"><img class="img-fluid" src="assets/img/IMG_6455.jpg" sizes="" width="" height="" alt="Photo by Alessandro Di Credico"></div>
                 </div>
@@ -164,86 +328,67 @@
                 </div>
             </div>
         </div>
-        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators"></ol>
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <div class="d-none d-md-block carousel-caption">
-                        <h1>First caption</h1>
-                        <p></p>
-                    </div>
-                </div>
-                <div class="carousel-item"><img class="d-block w-100" src="..." alt="Second slide" style="height:auto;width:100%;">
-                    <div class="d-none d-md-block carousel-caption">
-                        <h1>Second caption</h1>
-                        <p></p>
-                    </div>
-                </div>
-                <div class="carousel-item"><img class="d-block w-100" src="..." alt="Third slide" style="height:auto;width:100%;">
-                    <div class="d-none d-md-block carousel-caption">
-                        <h1>Third caption</h1>
-                        <p></p>
-                    </div>
-                </div>
-            </div><a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev"><span class="sr-only">Previous</span></a><a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next"><span class="sr-only">Next</span></a>
-        </div>
-        <div class="container">
+
+        <div class="container scroll-reveal" style="margin-top: 40px;">
+            <h2 class="mb-4">Photo Gallery</h2>
             <div class="row flex-box flex-wrap-wrap">
-                <div class="col col-sm-4 flex-box flex-justify-center flex-align-center"><a class="fancybox" rel="gallery1" title="Hero Image Nature" href="assets/img/hero-background-nature.jpg"><img class="img-fluid" width="1575" height="2100" src="assets/img/IMG_6612.jpg"></a></div>
-                <div class="col col-sm-4 flex-box flex-justify-center flex-align-center"><a class="fancybox" rel="gallery1" title="Hero Image Technology" href="assets/img/hero-background-technology.jpg"><img class="img-fluid" width="2690" height="3586" src="assets/img/IMG_6820.jpg"></a></div>
-                <div class="col col-sm-4 flex-box flex-justify-center flex-align-center"><a class="fancybox" rel="gallery1" title="Hero Image Travel" href="assets/img/hero-background-travel.jpg"><img class="img-fluid" width="3024" height="4032" src="assets/img/IMG_6581.jpg"></a></div>
-                <div class="col col-sm-4 flex-box flex-justify-center flex-align-center"><a class="fancybox" rel="gallery1" title="Hero Image Food" href="assets/img/hero-background-food.jpg"><img class="img-fluid" width="4032" height="3024" src="assets/img/IMG_6558.jpg"></a></div>
-                <div class="col col-sm-4 flex-box flex-justify-center flex-align-center"><a class="fancybox" rel="gallery1" title="Hero Image Music" href="assets/img/hero-background-music.jpg"><img class="img-fluid" width="4032" height="3024" src="assets/img/IMG_6425.jpg"></a></div>
-                <div class="col col-sm-4 flex-box flex-justify-center flex-align-center"><a class="fancybox" rel="gallery1" title="Hero Image Photography" href="assets/img/hero-background-photography.jpg"><img class="img-fluid" width="3024" height="4032" src="assets/img/IMG_7094.jpg"></a></div>
-            </div>
-        </div><script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script><script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
-        <div class="container mt-0 pt-0">
-            <div class="col-lg-8 mx-auto">
-                <h2></h2>
-                <p class="ms-0"></p>
-                <p></p>
-                <h2></h2>
-                <p></p>
-                <h2></h2>
-                <p></p>
-                <p></p>
-                <h2 class="mt-6"></h2>
-                <p style="text-align: left;"></p>
+                <div class="col col-sm-4 flex-box flex-justify-center flex-align-center mb-3"><a class="fancybox" rel="gallery1" title="Narangala Trek" href="assets/img/IMG_6612.jpg"><img class="img-fluid" src="assets/img/IMG_6612.jpg" alt="Narangala"></a></div>
+                <div class="col col-sm-4 flex-box flex-justify-center flex-align-center mb-3"><a class="fancybox" rel="gallery1" title="Dragon Rock" href="assets/img/IMG_6820.jpg"><img class="img-fluid" src="assets/img/IMG_6820.jpg" alt="Dragon Rock"></a></div>
+                <div class="col col-sm-4 flex-box flex-justify-center flex-align-center mb-3"><a class="fancybox" rel="gallery1" title="Summit Views" href="assets/img/IMG_6581.jpg"><img class="img-fluid" src="assets/img/IMG_6581.jpg" alt="Summit"></a></div>
+                <div class="col col-sm-4 flex-box flex-justify-center flex-align-center mb-3"><a class="fancybox" rel="gallery1" title="Night Camp" href="assets/img/IMG_6558.jpg"><img class="img-fluid" src="assets/img/IMG_6558.jpg" alt="Camp"></a></div>
+                <div class="col col-sm-4 flex-box flex-justify-center flex-align-center mb-3"><a class="fancybox" rel="gallery1" title="Morning Mist" href="assets/img/IMG_6425.jpg"><img class="img-fluid" src="assets/img/IMG_6425.jpg" alt="Mist"></a></div>
+                <div class="col col-sm-4 flex-box flex-justify-center flex-align-center mb-3"><a class="fancybox" rel="gallery1" title="Ridge Walk" href="assets/img/IMG_7094.jpg"><img class="img-fluid" src="assets/img/IMG_7094.jpg" alt="Ridge"></a></div>
             </div>
         </div>
-        <div class="col-lg-8 mb-0 pb-0 mx-auto">
+
+        <div class="col-lg-8 mb-0 pb-0 mx-auto scroll-reveal" style="margin-top: 40px;">
             <h2>Essential Tips</h2>
-            <p style="font-size: 21px;">Getting There: Catch a bus from Badulla to the base village. Simple and cheap. Buses run regularly throughout the day.</p>
-            <p style="font-size: 21px;text-align: center;">What to Bring: Headlamps or flashlights (critical if you're doing anything other than a perfect daytime hike), good hiking shoes with grip - those rocks get slippery after rain, water (get it from village houses on the way up), camping gear if you're staying overnight, cooking pots if you want to make food, firewood (buy it from villages, don't cut trees).</p>
-            <p style="font-size: 21px;">About Camping: We rented an 8-person tent from a university friend for cheap. You can also find camping gear rentals in Badulla. Bring warm clothes - it gets cold at night at the summit.</p>
-            <p style="font-size: 21px;">Key Info: Height 1,140m • Duration 2 hours up in daylight (longer in darkness like us) • Difficulty: Easy to moderate • Slippery rocks after rain • No guide needed, trail is clear in daylight • Gets crowded on weekends at main summit, but second upper area is quieter • No water sources at upper elevations - stock up at villages.</p>
-            <p style="font-size: 21px;">Real Talk: This is one of the easier mountain treks in Sri Lanka. If we managed it in the dark while slightly lost, you can definitely do it in proper daylight conditions. But don't underestimate it - bring proper shoes and lights.</p>
-            <p style="font-size: 21px;"><strong>What to Bring:</strong> Anti-leech socks (they work way better than spray), waterproof everything, warm layers for camping, at least 3 liters of water, first aid kit.</p>
-            <p style="font-size: 21px;"><strong>What to Bring:</strong> Anti-leech socks (they work way better than spray), waterproof everything, warm layers for camping, at least 3 liters of water, first aid kit.</p>
+            <p style="font-size: 21px;"><strong>Getting There:</strong> Catch a bus from Badulla to the base village. Simple and cheap. Buses run regularly throughout the day.</p>
+            <p style="font-size: 21px;"><strong>What to Bring:</strong> Headlamps or flashlights (critical if you're doing anything other than a perfect daytime hike), good hiking shoes with grip - those rocks get slippery after rain, water (get it from village houses on the way up), camping gear if you're staying overnight, cooking pots if you want to make food, firewood (buy it from villages, don't cut trees).</p>
+            <p style="font-size: 21px;"><strong>About Camping:</strong> We rented an 8-person tent from a university friend for cheap. You can also find camping gear rentals in Badulla. Bring warm clothes - it gets cold at night at the summit.</p>
+            <p style="font-size: 21px;"><strong>Key Info:</strong> Height 1,140m • Duration 2 hours up in daylight (longer in darkness like us) • Difficulty: Easy to moderate • Slippery rocks after rain • No guide needed, trail is clear in daylight • Gets crowded on weekends at main summit, but second upper area is quieter • No water sources at upper elevations - stock up at villages.</p>
+            <p style="font-size: 21px;"><strong>Real Talk:</strong> This is one of the easier mountain treks in Sri Lanka. If we managed it in the dark while slightly lost, you can definitely do it in proper daylight conditions. But don't underestimate it - bring proper shoes and lights.</p>
         </div>
-        <div class="col-lg-8 mb-0 pb-0 mx-auto">
+        <div class="col-lg-8 mb-0 pb-0 mx-auto scroll-reveal">
             <h2 class="mt-6"><strong>Would I Do It Again?</strong></h2>
             <p class="mb-0" style="font-size: 21px;text-align: center;">In a heartbeat. But maybe not in the dark next time. Or maybe yes, because that's what made it memorable.<br>Narangala is beautiful, accessible, affordable, and surprisingly easy compared to monsters like Namunukula. It's the kind of mountain that forgives your bad planning and still shows you an amazing time.<br>We almost cancelled because of rain. We hiked at completely the wrong time. We got slightly lost in the darkness. We cooked noodles over a campfire because we had no other choice. We didn't get the perfect sunrise. And it was still incredible.<br>Sometimes the best adventures are the ones that don't go according to plan. We came for sunset, got stars instead, and honestly wouldn't change a thing. That view of the valley lights at night, sitting around the fire with the squad, waking up to misty mountain vibes - those are the moments you remember years later.<br>The photos on Instagram show Narangala in perfect golden light with dramatic sunrises. Our Narangala was rain, darkness, mist, and firelight. And that made it ours.<br>If you're planning Narangala, do it properly - start early, bring proper lights, check weather. But if everything goes wrong like it did for us, don't cancel. Some of the best memories come from the trips that become stories you tell for years.<br><br></p>
             <p class="mt-0 mb-0" style="font-size: 22px;font-weight: bold;font-family: Agbalumo, serif;">Get good friends together. Pack that tent. Buy that firewood. And just go.</p>
         </div>
-        <h2 class="mt-4"></h2>
-        <p></p>
+
         <div class="row mt-8 pt-0">
             <div class="col-lg-8 mx-auto">
-                <p>August 2025 • Narangala, Sri Lanka</p>
+                <p>August 2024 • Narangala, Sri Lanka</p>
                 <ul class="list-inline banner-social-buttons">
                     <li class="list-inline-item list-inline-item"><a class="btn btn-primary btn-lg btn-default" role="button" href="index.html"><i class="fas fa-arrow-left fa-fw"></i><span class="network-name">&nbsp; Back to Home</span></a></li>
                 </ul>
             </div>
         </div>
-        <p></p>
-        <p style="margin-top:30px;"></p>
     </section>
     <footer>
         <div class="container text-center">
             <p>Copyright © SD2025</p>
         </div>
     </footer>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script>
+        // Scroll reveal animation
+        function revealOnScroll() {
+            const reveals = document.querySelectorAll('.scroll-reveal, .scroll-reveal-left, .scroll-reveal-right');
+            
+            reveals.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (elementTop < windowHeight - 100) {
+                    element.classList.add('visible');
+                }
+            });
+        }
+
+        // Run on load and scroll
+        window.addEventListener('scroll', revealOnScroll);
+        window.addEventListener('load', revealOnScroll);
+    </script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.pack.js"></script>
