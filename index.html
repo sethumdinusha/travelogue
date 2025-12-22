@@ -80,41 +80,67 @@
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
             margin: 0 auto;
             max-width: 100%;
+            width: 100%;
+        }
+
+        /* Hero section mobile fixes */
+        .masthead .brand-heading {
+            font-size: 3em;
         }
 
         /* Mobile responsiveness */
         @media (max-width: 768px) {
+            /* Hide hero title on mobile to prevent overlap */
+            .masthead .brand-heading {
+                font-size: 2em !important;
+                margin-bottom: 10px;
+            }
+
+            .masthead .intro-text {
+                font-size: 1em !important;
+            }
+
+            .masthead {
+                min-height: 60vh !important;
+                padding-top: 60px !important;
+                padding-bottom: 60px !important;
+            }
+
             .text-focus {
-                padding: 25px 20px;
-                margin: 0 15px;
-                border-radius: 10px;
+                padding: 25px 15px;
+                margin: 0;
+                border-radius: 0;
+                width: 100%;
             }
 
             .text-focus h2 {
-                font-size: 22px !important;
+                font-size: 20px !important;
                 margin: 15px 0 !important;
                 height: auto !important;
             }
 
             .text-focus h3 {
-                font-size: 18px !important;
+                font-size: 17px !important;
                 margin: 15px 0 !important;
             }
 
             .text-focus p {
-                font-size: 15px !important;
+                font-size: 14px !important;
                 line-height: 1.6;
                 text-align: left !important;
+                margin-bottom: 15px;
             }
 
             .text-focus ul {
                 text-align: left;
-                padding-left: 20px;
+                padding-left: 25px;
+                list-style-position: outside;
             }
 
             .text-focus ul li {
-                font-size: 14px;
+                font-size: 13px;
                 text-align: left;
+                margin-bottom: 8px;
             }
 
             .banner-social-buttons {
@@ -130,26 +156,51 @@
             .btn-default {
                 width: 100% !important;
                 max-width: 100% !important;
-                font-size: 16px !important;
+                font-size: 15px !important;
+            }
+
+            /* Section spacing fixes */
+            #about {
+                margin-top: 0 !important;
+                padding-top: 80px !important;
+                padding-bottom: 80px !important;
+            }
+
+            #contact {
+                padding-top: 80px !important;
+                padding-bottom: 80px !important;
+            }
+
+            .container {
+                padding-left: 0 !important;
+                padding-right: 0 !important;
             }
         }
 
         @media (max-width: 576px) {
+            .masthead .brand-heading {
+                font-size: 1.8em !important;
+            }
+
             .text-focus {
-                padding: 20px 15px;
-                margin: 0 10px;
+                padding: 20px 12px;
+                margin: 0;
             }
 
             .text-focus h2 {
-                font-size: 20px !important;
+                font-size: 18px !important;
             }
 
             .text-focus p {
-                font-size: 14px !important;
+                font-size: 13px !important;
             }
 
             .text-focus ul li {
-                font-size: 13px;
+                font-size: 12px;
+            }
+
+            .text-focus h3 {
+                font-size: 16px !important;
             }
         }
 
