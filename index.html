@@ -22,32 +22,27 @@
     <link rel="stylesheet" href="assets/css/Carousel_Image_Slider.css">
     <link rel="stylesheet" href="assets/css/Lightbox-Gallery-baguetteBox.min.css">
     <style>
-        /* Modern Parallax and Scroll Effects */
         html {
             scroll-behavior: smooth;
         }
 
-        /* Glassmorphism effect for text areas */
-        .glass-effect {
-            background: rgba(0, 0, 0, 0.6);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border-radius: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 40px;
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        /* Hero animations */
+        .masthead .brand-heading {
+            animation: fadeInUp 1s ease-out;
         }
 
-        /* Parallax sections */
-        .parallax-section {
-            background-attachment: fixed;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-            position: relative;
+        .masthead .intro-text {
+            animation: fadeInUp 1.2s ease-out;
         }
 
-        /* Modern fade animations */
+        .masthead .btn-circle {
+            animation: fadeIn 1.8s ease-out;
+        }
+
+        #mainNav {
+            animation: slideInDown 0.8s ease-out;
+        }
+
         @keyframes fadeInUp {
             from {
                 opacity: 0;
@@ -75,121 +70,115 @@
             }
         }
 
-        @keyframes scaleIn {
-            from {
-                opacity: 0;
-                transform: scale(0.8);
+        /* Text focus with modern backdrop blur */
+        .text-focus {
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            padding: 40px 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            margin: 0 15px;
+        }
+
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            .text-focus {
+                padding: 30px 15px;
+                margin: 0 10px;
             }
-            to {
-                opacity: 1;
-                transform: scale(1);
+
+            .text-focus h2 {
+                font-size: 24px !important;
+                margin: 15px 0 !important;
+            }
+
+            .text-focus h3 {
+                font-size: 18px !important;
+            }
+
+            .text-focus p {
+                font-size: 16px !important;
+                line-height: 1.6;
+            }
+
+            .text-focus ul li {
+                font-size: 15px;
+            }
+
+            .banner-social-buttons {
+                padding: 0;
+            }
+
+            .banner-social-buttons .list-inline-item {
+                display: block;
+                margin-bottom: 15px;
+            }
+
+            .btn-default {
+                width: 100%;
+                max-width: 280px;
             }
         }
 
-        @keyframes slideInLeft {
-            from {
-                opacity: 0;
-                transform: translateX(-100px);
+        @media (max-width: 576px) {
+            .text-focus {
+                padding: 25px 12px;
+                margin: 0 5px;
             }
-            to {
-                opacity: 1;
-                transform: translateX(0);
+
+            .text-focus h2 {
+                font-size: 22px !important;
             }
-        }
 
-        @keyframes slideInRight {
-            from {
-                opacity: 0;
-                transform: translateX(100px);
+            .text-focus p {
+                font-size: 15px !important;
             }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        /* Hero animations */
-        .masthead .brand-heading {
-            animation: fadeInUp 1s ease-out;
-        }
-
-        .masthead .intro-text {
-            animation: fadeInUp 1.2s ease-out;
-        }
-
-        .masthead .btn-circle {
-            animation: fadeIn 1.8s ease-out;
-        }
-
-        #mainNav {
-            animation: slideInDown 0.8s ease-out;
         }
 
         /* Scroll reveal animations */
-        .reveal {
+        .scroll-reveal {
             opacity: 0;
-            transform: translateY(50px);
-            transition: all 0.8s ease-out;
+            transform: translateY(40px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
         }
 
-        .reveal.active {
+        .scroll-reveal.visible {
             opacity: 1;
             transform: translateY(0);
         }
 
-        .reveal-left {
+        .scroll-reveal-left {
             opacity: 0;
-            transform: translateX(-100px);
-            transition: all 0.8s ease-out;
+            transform: translateX(-50px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
         }
 
-        .reveal-left.active {
+        .scroll-reveal-left.visible {
             opacity: 1;
             transform: translateX(0);
         }
 
-        .reveal-right {
+        .scroll-reveal-right {
             opacity: 0;
-            transform: translateX(100px);
-            transition: all 0.8s ease-out;
+            transform: translateX(50px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
         }
 
-        .reveal-right.active {
+        .scroll-reveal-right.visible {
             opacity: 1;
             transform: translateX(0);
-        }
-
-        .reveal-scale {
-            opacity: 0;
-            transform: scale(0.8);
-            transition: all 0.6s ease-out;
-        }
-
-        .reveal-scale.active {
-            opacity: 1;
-            transform: scale(1);
-        }
-
-        /* Stagger animation for lists */
-        .stagger-item {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.5s ease-out;
-        }
-
-        .stagger-item.active {
-            opacity: 1;
-            transform: translateY(0);
         }
 
         /* Card hover effects */
         .card {
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            overflow: hidden;
         }
 
         .card:hover {
-            transform: translateY(-15px) scale(1.02);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
         }
 
         .card img {
@@ -197,11 +186,7 @@
         }
 
         .card:hover img {
-            transform: scale(1.1);
-        }
-
-        .card {
-            overflow: hidden;
+            transform: scale(1.08);
         }
 
         /* Button animations */
@@ -211,49 +196,9 @@
             overflow: hidden;
         }
 
-        .btn-primary-outline:before, .btn-default:before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 0;
-            height: 0;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.1);
-            transform: translate(-50%, -50%);
-            transition: width 0.6s, height 0.6s;
-        }
-
-        .btn-primary-outline:hover:before, .btn-default:hover:before {
-            width: 300px;
-            height: 300px;
-        }
-
-        .btn-primary-outline:hover {
+        .btn-primary-outline:hover, .btn-default:hover {
             transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-        }
-
-        .btn-default:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
-        }
-
-        /* Smooth text focus effect */
-        .text-focus {
-            text-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
-        }
-
-        /* Progress bar on scroll */
-        .scroll-progress {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 0%;
-            height: 4px;
-            background: linear-gradient(90deg, #4CAF50, #8BC34A);
-            z-index: 9999;
-            transition: width 0.1s ease;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
         }
 
         /* Floating animation for down arrow */
@@ -266,9 +211,15 @@
             animation: float 2s ease-in-out infinite;
         }
 
-        /* Section transitions */
-        section {
-            transition: all 0.3s ease;
+        /* List styling */
+        ul {
+            list-style-position: inside;
+            text-align: center;
+            padding: 0;
+        }
+
+        ul li {
+            margin-bottom: 0.5rem;
         }
     </style>
 </head>
@@ -298,33 +249,33 @@
             </div>
         </div>
     </nav>
-    <section class="text-center content-section parallax-section" id="about" style="margin-top: -49px;margin-bottom: -83px;padding-top: 103px;background: url(&quot;assets/img/IMG_6915.jpg&quot;) center / cover, var(--bs-success-text-emphasis);">
+    <section class="text-center content-section" id="about" style="margin-top: -49px;margin-bottom: -83px;padding-top: 103px;background: url(&quot;assets/img/IMG_6915.jpg&quot;) center / cover, var(--bs-success-text-emphasis);">
         <div class="container">
             <div class="row mt-0">
-                <div class="col-lg-8 mt-0 pt-0 mx-auto glass-effect reveal">
-                    <h2 class="pt-0 text-focus" style="font-weight: bold;margin: 22px;font-family: Aclonica, sans-serif;">About Travelogue</h2>
-                    <p class="reveal-scale" style="text-align: center;font-size: 19px;">Hi! I'm Sethum Dinusha, a Mechanical Engineering Technologist&nbsp;studying at Uva Wellassa University.<br>Beyond engineering, I'm passionate about exploring new places&nbsp;and documenting my travel adventures. From mountain peaks to&nbsp;hidden beaches, I love discovering the beauty of Sri Lanka&nbsp;and sharing these experiences.<br>This blog is my journey - a collection of travel stories,&nbsp;<br>tips, and the incredible moments I've captured along the way. Join me as I explore, learn, and grow through every adventure!</p>
-                    <h3 class="reveal-scale" style="font-size: 20.1px;font-family: Aclonica, sans-serif;font-weight: bold;color: var(--bs-warning);margin: 22px 0;">What You'll Find Here:</h3>
-                    <ul style="list-style-position: inside; text-align: center; padding: 0;">
-                        <li class="stagger-item" style="margin-bottom: 0.5rem;">Travel guides and hidden gems in Sri Lanka</li>
-                        <li class="stagger-item" style="margin-bottom: 0.5rem;">Photography from my adventures</li>
-                        <li class="stagger-item" style="margin-bottom: 0.5rem;">Tips for fellow explorers</li>
-                        <li class="stagger-item" style="margin-bottom: 0.5rem;">Stories from the road</li>
+                <div class="col-lg-8 mt-0 pt-0 mx-auto text-focus scroll-reveal">
+                    <h2 class="pt-0" style="font-weight: bold;height: 32.1px;margin: 22px;font-family: Aclonica, sans-serif;">About Travelogue</h2>
+                    <p style="text-align: center;font-size: 19px;">Hi! I'm Sethum Dinusha, a Mechanical Engineering Technologist&nbsp;studying at Uva Wellassa University.<br>Beyond engineering, I'm passionate about exploring new places&nbsp;and documenting my travel adventures. From mountain peaks to&nbsp;hidden beaches, I love discovering the beauty of Sri Lanka&nbsp;and sharing these experiences.<br>This blog is my journey - a collection of travel stories,&nbsp;<br>tips, and the incredible moments I've captured along the way. Join me as I explore, learn, and grow through every adventure!</p>
+                    <h3 style="font-size: 20.1px;font-family: Aclonica, sans-serif;font-weight: bold;color: var(--bs-warning);margin: 22px 0;">What You'll Find Here:</h3>
+                    <ul>
+                        <li>Travel guides and hidden gems in Sri Lanka</li>
+                        <li>Photography from my adventures</li>
+                        <li>Tips for fellow explorers</li>
+                        <li>Stories from the road</li>
                     </ul>
-                    <p class="reveal-scale"><br>Whether you're planning your next trip or just love travel&nbsp;<br>stories, I hope my experiences inspire your own adventures!<br><br></p>
+                    <p><br>Whether you're planning your next trip or just love travel&nbsp;<br>stories, I hope my experiences inspire your own adventures!<br><br></p>
                 </div>
             </div>
         </div>
     </section>
-    <section class="text-center download-section content-section parallax-section" id="download" style="margin: -141px 0px -142px;margin-top: -140px;margin-bottom: -139px;background: url(&quot;assets/img/IMG_6428.jpg&quot;) center / cover;">
+    <section class="text-center download-section content-section" id="download" style="margin: -141px 0px -142px;margin-top: -140px;margin-bottom: -139px;background: url(&quot;assets/img/IMG_6428.jpg&quot;) center / cover;">
         <div class="container py-4 py-xl-5">
             <div class="row mb-5">
-                <div class="col-md-8 col-xl-6 text-center mx-auto reveal">
-                    <h2 class="text-focus" style="font-family: Aclonica, sans-serif;">Travel Stories</h2>
+                <div class="col-md-8 col-xl-6 text-center mx-auto scroll-reveal">
+                    <h2 style="font-family: Aclonica, sans-serif;">Travel Stories</h2>
                 </div>
             </div>
             <div class="row gy-4 row-cols-1 row-cols-md-2 row-cols-xl-3">
-                <div class="col reveal-left">
+                <div class="col scroll-reveal-left">
                     <div class="card"><img class="object-fit-cover card-img-top w-100 d-block" style="height: 200px;" src="assets/img/IMG_7687.jpg" alt="Namunukula Summit">
                         <div class="card-body p-4">
                             <p class="text-primary mb-0 card-text">Namunukula</p>
@@ -334,7 +285,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col reveal-right">
+                <div class="col scroll-reveal-right">
                     <div class="card"><img class="object-fit-cover card-img-top w-100 d-block" style="height: 200px;" src="assets/img/IMG_7091.jpg" alt="Narangala Dragon Rock">
                         <div class="card-body p-4">
                             <p class="text-primary mb-0 card-text">Narangala</p>
@@ -349,16 +300,16 @@
             </div>
         </div>
     </section>
-    <section class="text-center content-section parallax-section" id="contact" style="background: url(&quot;assets/img/IMG_6612.jpg&quot;) center / cover;">
+    <section class="text-center content-section" id="contact" style="background: url(&quot;assets/img/IMG_6612.jpg&quot;) center / cover;">
         <div class="container">
             <div class="row">
-                <div class="col-lg-8 mb-2 mx-auto glass-effect reveal">
-                    <h2 class="mt-4 text-focus" style="font-family: Aclonica, sans-serif;">Contact Me</h2>
-                    <p class="reveal-scale" style="font-size: 20px;">Connect with me on social media. I'm just a click away!</p>
+                <div class="col-lg-8 mb-2 mx-auto text-focus scroll-reveal">
+                    <h2 class="mt-4" style="font-family: Aclonica, sans-serif;">Contact Me</h2>
+                    <p style="font-size: 20px;">Connect with me on social media. I'm just a click away!</p>
                     <ul class="list-inline banner-social-buttons">
-                        <li class="list-inline-item stagger-item">&nbsp;<a class="btn btn-primary btn-lg btn-default" role="button" rel="author" target="_blank" href="https://www.linkedin.com/in/sethum-dinusha-805b61245/"><i class="fa fa-linkedin-square fa-fw"></i><span>&nbsp; LinkedIn</span></a></li>
-                        <li class="list-inline-item stagger-item">&nbsp;<a class="btn btn-primary btn-lg btn-default" role="button" href="https://www.instagram.com/_mr_.sd_?igsh=MTY3eXh4M29lYjhlZQ%3D%3D&amp;utm_source=qr" target="_blank"><i class="fa fa-instagram fa-fw"></i><span>&nbsp;Instagram</span></a></li>
-                        <li class="list-inline-item stagger-item">&nbsp;<a class="btn btn-primary btn-lg btn-default" role="button" href="https://github.com/sethumdinusha" target="_blank"><i class="fa fa-github fa-fw"></i><span>&nbsp;GitHub</span></a></li>
+                        <li class="list-inline-item">&nbsp;<a class="btn btn-primary btn-lg btn-default" role="button" rel="author" target="_blank" href="https://www.linkedin.com/in/sethum-dinusha-805b61245/"><i class="fa fa-linkedin-square fa-fw"></i><span>&nbsp; LinkedIn</span></a></li>
+                        <li class="list-inline-item">&nbsp;<a class="btn btn-primary btn-lg btn-default" role="button" href="https://www.instagram.com/_mr_.sd_?igsh=MTY3eXh4M29lYjhlZQ%3D%3D&amp;utm_source=qr" target="_blank"><i class="fa fa-instagram fa-fw"></i><span>&nbsp;Instagram</span></a></li>
+                        <li class="list-inline-item">&nbsp;<a class="btn btn-primary btn-lg btn-default" role="button" href="https://github.com/sethumdinusha" target="_blank"><i class="fa fa-github fa-fw"></i><span>&nbsp;GitHub</span></a></li>
                     </ul>
                 </div>
             </div>
@@ -378,117 +329,36 @@
     <script src="assets/js/Lightbox-Gallery-baguetteBox.min.js"></script>
     <script src="assets/js/Lightbox-Gallery.js"></script>
     <script>
-        // Modern Scroll Animation System
-        document.addEventListener('DOMContentLoaded', function() {
-            // Scroll progress bar
-            const progressBar = document.createElement('div');
-            progressBar.className = 'scroll-progress';
-            document.body.prepend(progressBar);
-
-            window.addEventListener('scroll', () => {
+        // Simple scroll reveal animation
+        function revealOnScroll() {
+            const reveals = document.querySelectorAll('.scroll-reveal, .scroll-reveal-left, .scroll-reveal-right');
+            
+            reveals.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
                 const windowHeight = window.innerHeight;
-                const documentHeight = document.documentElement.scrollHeight - windowHeight;
-                const scrolled = (window.scrollY / documentHeight) * 100;
-                progressBar.style.width = scrolled + '%';
-            });
-
-            // Intersection Observer for scroll animations
-            const observerOptions = {
-                threshold: 0.15,
-                rootMargin: '0px 0px -100px 0px'
-            };
-
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('active');
-                        
-                        // Stagger animation for list items
-                        if (entry.target.classList.contains('reveal') || 
-                            entry.target.classList.contains('reveal-scale')) {
-                            const staggerItems = entry.target.querySelectorAll('.stagger-item');
-                            staggerItems.forEach((item, index) => {
-                                setTimeout(() => {
-                                    item.classList.add('active');
-                                }, index * 150);
-                            });
-                        }
-                    }
-                });
-            }, observerOptions);
-
-            // Observe all reveal elements
-            document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale').forEach(el => {
-                observer.observe(el);
-            });
-
-            // Smooth scroll for anchor links
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    const target = document.querySelector(this.getAttribute('href'));
-                    if (target) {
-                        target.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'start'
-                        });
-                    }
-                });
-            });
-
-            // Parallax effect on scroll
-            window.addEventListener('scroll', () => {
-                const scrolled = window.pageYOffset;
-                const parallaxSections = document.querySelectorAll('.parallax-section');
                 
-                parallaxSections.forEach(section => {
-                    const speed = 0.5;
-                    const yPos = -(scrolled * speed);
-                    section.style.backgroundPosition = `center ${yPos}px`;
-                });
-            });
-
-            // Add ripple effect to buttons
-            document.querySelectorAll('.btn').forEach(button => {
-                button.addEventListener('click', function(e) {
-                    const ripple = document.createElement('span');
-                    const rect = this.getBoundingClientRect();
-                    const size = Math.max(rect.width, rect.height);
-                    const x = e.clientX - rect.left - size / 2;
-                    const y = e.clientY - rect.top - size / 2;
-                    
-                    ripple.style.cssText = `
-                        position: absolute;
-                        width: ${size}px;
-                        height: ${size}px;
-                        border-radius: 50%;
-                        background: rgba(255, 255, 255, 0.5);
-                        left: ${x}px;
-                        top: ${y}px;
-                        pointer-events: none;
-                        transform: scale(0);
-                        animation: ripple 0.6s ease-out;
-                    `;
-                    
-                    this.style.position = 'relative';
-                    this.style.overflow = 'hidden';
-                    this.appendChild(ripple);
-                    
-                    setTimeout(() => ripple.remove(), 600);
-                });
-            });
-
-            // Add ripple animation
-            const style = document.createElement('style');
-            style.textContent = `
-                @keyframes ripple {
-                    to {
-                        transform: scale(4);
-                        opacity: 0;
-                    }
+                if (elementTop < windowHeight - 100) {
+                    element.classList.add('visible');
                 }
-            `;
-            document.head.appendChild(style);
+            });
+        }
+
+        // Run on load and scroll
+        window.addEventListener('scroll', revealOnScroll);
+        window.addEventListener('load', revealOnScroll);
+        
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
         });
     </script>
 </body>
