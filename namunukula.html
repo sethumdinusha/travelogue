@@ -33,13 +33,16 @@
         /* Hero animations */
         .masthead .brand-heading {
             animation: fadeInUp 1s ease-out;
-            font-size: clamp(1.8em, 8vw, 4em);
+            font-size: clamp(1.5em, 8vw, 4em);
             margin-bottom: 1rem;
             text-align: center;
             word-wrap: break-word;
             overflow-wrap: break-word;
             max-width: 100%;
-            padding: 0 0.5rem;
+            width: 100%;
+            padding: 0 15px;
+            box-sizing: border-box;
+            overflow: hidden;
         }
 
         .masthead .intro-text {
@@ -99,6 +102,7 @@
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
+            overflow-x: hidden;
         }
 
         .intro-body {
@@ -108,12 +112,14 @@
             justify-content: center;
             z-index: 1;
             overflow: hidden;
+            overflow-x: hidden;
         }
 
         .intro-body .container {
-            padding: 0 1rem;
+            padding: 0 15px;
             max-width: 100%;
             overflow: hidden;
+            box-sizing: border-box;
         }
 
         /* Scroll reveal animations */
@@ -199,11 +205,22 @@
         @media (max-width: 768px) {
             body {
                 padding-top: 60px !important;
+                overflow-x: hidden !important;
             }
 
             .masthead {
                 min-height: 80vh;
                 background-attachment: scroll !important;
+                overflow-x: hidden !important;
+
+            .brand-heading {
+                font-size: clamp(2rem, 12vw, 3rem) !important;
+                max-width: 100% !important;
+                width: 100% !important;
+                padding: 0 15px !important;
+                box-sizing: border-box !important;
+                overflow: hidden !important;
+                text-align: center !important;
             }
 
             .container {
@@ -242,16 +259,23 @@
         @media (max-width: 576px) {
             body {
                 padding-top: 60px !important;
+                overflow-x: hidden !important;
             }
 
             .masthead {
                 min-height: 70vh;
                 background-attachment: scroll !important;
+                overflow-x: hidden !important;
             }
 
             .masthead .brand-heading {
-                font-size: clamp(1.5em, 7vw, 2.2em) !important;
-                padding: 0 1rem !important;
+                font-size: clamp(1.5rem, 10vw, 2.5rem) !important;
+                max-width: 100% !important;
+                width: 100% !important;
+                padding: 0 15px !important;
+                box-sizing: border-box !important;
+                overflow: hidden !important;
+                text-align: center !important;
             }
 
             .container {
@@ -308,16 +332,24 @@
         @media (max-width: 380px) {
             body {
                 padding-top: 56px !important;
+                overflow-x: hidden !important;
             }
 
             .masthead {
                 min-height: 60vh;
                 background-attachment: scroll !important;
+                overflow-x: hidden !important;
             }
 
             .masthead .brand-heading {
-                font-size: clamp(1.3em, 6vw, 1.6em) !important;
-                padding: 0 0.75rem !important;
+                font-size: clamp(1.2rem, 8vw, 1.8rem) !important;
+                max-width: 100% !important;
+                width: 100% !important;
+                padding: 0 10px !important;
+                box-sizing: border-box !important;
+                overflow: hidden !important;
+                text-align: center !important;
+                letter-spacing: -0.5px !important;
             }
 
             h1.fw-bolder {
