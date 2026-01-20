@@ -25,13 +25,20 @@
             scroll-behavior: smooth;
         }
 
+        body {
+            overflow-x: hidden;
+        }
+
         /* Hero animations */
         .masthead .brand-heading {
             animation: fadeInUp 1s ease-out;
+            font-size: clamp(2.5em, 8vw, 4em);
+            margin-bottom: 1rem;
         }
 
         .masthead .intro-text {
             animation: fadeInUp 1.2s ease-out;
+            font-size: clamp(1.1em, 3vw, 1.5em);
         }
 
         @keyframes fadeInUp {
@@ -58,6 +65,39 @@
 
         #mainNav {
             animation: slideInDown 0.8s ease-out;
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+
+        .navbar-brand {
+            font-size: clamp(1.2em, 3vw, 1.5em);
+            font-weight: bold;
+        }
+
+        .nav-link {
+            font-size: clamp(0.95em, 2vw, 1.1em);
+            transition: color 0.3s ease;
+        }
+
+        .navbar-shrink {
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+        }
+
+        /* Masthead improvements */
+        .masthead {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .intro-body {
+            width: 100%;
+        }
+
+        .intro-body .container {
+            padding-left: 1rem;
+            padding-right: 1rem;
         }
 
         /* Scroll reveal animations */
@@ -97,71 +137,151 @@
         /* Image hover effects */
         .lc-block img {
             transition: transform 0.4s ease;
+            width: 100%;
+            height: auto;
+            display: block;
         }
 
         .lc-block:hover img {
             transform: scale(1.05);
         }
 
-        /* Mobile responsiveness */
+        /* Typography improvements */
+        h1.fw-bolder {
+            font-size: clamp(1.5em, 4vw, 2.5em);
+            color: #ffffff;
+            margin-bottom: clamp(1rem, 2vw, 1.5rem);
+        }
+
+        h2 {
+            font-size: clamp(1.3em, 3.5vw, 2em);
+        }
+
+        .lead {
+            font-size: clamp(1em, 2.5vw, 1.4em);
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        p {
+            font-size: clamp(0.95em, 2vw, 1.1em);
+            line-height: 1.6;
+        }
+
+        /* Content section improvements */
+        .content-section {
+            padding: clamp(3rem, 8vw, 6rem) 0;
+            margin: 0;
+        }
+
+        .container-fluid {
+            padding-left: clamp(0.75rem, 2vw, 2rem);
+            padding-right: clamp(0.75rem, 2vw, 2rem);
+        }
+
+        /* Tablet responsiveness (768px) */
         @media (max-width: 768px) {
-            .masthead .brand-heading {
-                font-size: 2em !important;
-            }
-
-            .masthead .intro-text {
-                font-size: 1em !important;
-            }
-
             .masthead {
-                min-height: 60vh !important;
-                padding-top: 60px !important;
-                padding-bottom: 60px !important;
+                min-height: 80vh;
             }
 
-            .lead {
-                font-size: 16px !important;
-            }
-
-            h1.fw-bolder {
-                font-size: 24px !important;
-            }
-
-            .container-fluid {
-                padding-left: 15px !important;
-                padding-right: 15px !important;
+            .container {
+                padding-left: 1rem;
+                padding-right: 1rem;
             }
 
             .row {
-                margin-left: 0 !important;
-                margin-right: 0 !important;
+                margin-left: 0;
+                margin-right: 0;
             }
 
             .col-md-10, .col-xl-5 {
-                padding-left: 10px !important;
-                padding-right: 10px !important;
-            }
-        }
-
-        @media (max-width: 576px) {
-            .masthead .brand-heading {
-                font-size: 1.8em !important;
+                padding-left: 0.5rem;
+                padding-right: 0.5rem;
             }
 
             .lead {
-                font-size: 15px !important;
+                font-size: 1em;
             }
 
             h1.fw-bolder {
-                font-size: 22px !important;
+                font-size: 1.8em;
             }
 
             h2 {
-                font-size: 20px !important;
+                font-size: 1.4em;
+            }
+
+            .me-lg-5 {
+                margin-right: 0;
+            }
+        }
+
+        /* Mobile responsiveness (576px) */
+        @media (max-width: 576px) {
+            .masthead {
+                min-height: 70vh;
+            }
+
+            .masthead .brand-heading {
+                font-size: 1.8em;
+            }
+
+            .container {
+                padding-left: 0.75rem;
+                padding-right: 0.75rem;
+            }
+
+            .container-fluid {
+                padding-left: 0.75rem;
+                padding-right: 0.75rem;
+            }
+
+            .lead {
+                font-size: 0.95em;
+            }
+
+            h1.fw-bolder {
+                font-size: 1.5em;
+            }
+
+            h2 {
+                font-size: 1.2em;
             }
 
             p {
-                font-size: 15px !important;
+                font-size: 0.9em;
+            }
+
+            .lc-block {
+                margin-bottom: 1.5rem;
+            }
+
+            .row {
+                margin-bottom: 1.5rem;
+            }
+        }
+
+        /* Extra small devices (max 380px) */
+        @media (max-width: 380px) {
+            .masthead {
+                min-height: 60vh;
+            }
+
+            .masthead .brand-heading {
+                font-size: 1.5em;
+            }
+
+            h1.fw-bolder {
+                font-size: 1.2em;
+            }
+
+            .lead {
+                font-size: 0.9em;
+            }
+
+            p {
+                font-size: 0.85em;
             }
         }
     </style>
@@ -180,11 +300,11 @@
             </div>
         </div>
     </nav>
-    <header class="masthead" style="background: url(&quot;assets/img/IMG_7687.jpg&quot;) center / cover;">
-        <div class="intro-body">
-            <div class="container">
+    <header class="masthead" style="background: url(&quot;assets/img/IMG_7687.jpg&quot;) center / cover no-repeat;">
+        <div class="intro-body w-100">
+            <div class="container px-3">
                 <div class="row">
-                    <div class="col-lg-8 mx-auto">
+                    <div class="col-12 col-lg-8 mx-auto">
                         <h1 class="brand-heading">Namunukula</h1>
                         <p class="intro-text">Conquering Namunukula: Sri Lanka's Hidden Nine Peaks</p>
                     </div>
@@ -195,28 +315,28 @@
     <section class="text-center mt-0 mb-0 download-section content-section">
         <div class="container-fluid">
             <div class="row align-items-center scroll-reveal" style="position: relative;transition: all 0.5s ease-in-out;">
-                <div class="col-md-10 col-xl-5 mb-4 mx-auto">
-                    <div class="lc-block"><img class="img-fluid mt-4" src="assets/img/IMG_7213.jpg" sizes="" width="" height="" alt="Photo by Alessandro Di Credico"></div>
+                <div class="col-12 col-md-10 col-xl-5 mb-4 mx-auto">
+                    <div class="lc-block"><img src="assets/img/IMG_7213.jpg" alt="Photo by Alessandro Di Credico"></div>
                 </div>
                 <div class="col-12 col-xl-5 mx-auto">
                     <div class="me-lg-5 mb-3 lc-block">
                         <div>
-                            <h1 class="fw-bolder" style="color: #ffffff;">Walking Among Giants </h1>
-                            <p class="lead" style="font-size: 22px;color: #ffffff;">The first part of the climb was magical. We walked through a forest of towering eucalyptus and pine trees—these weren't regular trees, they were massive. The forest floor was covered in leaves that made everything feel soft and quiet.</p>
+                            <h1 class="fw-bolder">Walking Among Giants </h1>
+                            <p class="lead">The first part of the climb was magical. We walked through a forest of towering eucalyptus and pine trees—these weren't regular trees, they were massive. The forest floor was covered in leaves that made everything feel soft and quiet.</p>
                         </div>
                     </div>
                     <div class="d-grid d-lg-block gap-3 lc-block"></div>
                 </div>
             </div>
             <div class="row align-items-center scroll-reveal-left">
-                <div class="col-md-10 col-xl-5 mb-4 mx-auto">
-                    <div class="lc-block"><img class="img-fluid" src="assets/img/IMG_7275.jpg" sizes="" width="" height="" alt="Photo by Alessandro Di Credico"></div>
+                <div class="col-12 col-md-10 col-xl-5 mb-4 mx-auto">
+                    <div class="lc-block"><img src="assets/img/IMG_7275.jpg" alt="Photo by Alessandro Di Credico"></div>
                 </div>
                 <div class="col-12 col-xl-5 mx-auto">
                     <div class="mb-2 lc-block"></div>
                     <div class="me-lg-5 mb-3 lc-block">
                         <div>
-                            <p class="lead" style="font-size: 22px;"><br>Then everything changed. We crossed into a mountain rainforest with dense, twisted, moss-covered trees. It started raining—this constant mist from everywhere. The trail got steep, really steep. Everything was slippery with bamboo groves and muddy paths.<br><br></p>
+                            <p class="lead"><br>Then everything changed. We crossed into a mountain rainforest with dense, twisted, moss-covered trees. It started raining—this constant mist from everywhere. The trail got steep, really steep. Everything was slippery with bamboo groves and muddy paths.<br><br></p>
                         </div>
                     </div>
                     <div class="d-grid d-lg-block gap-3 lc-block"></div>
@@ -225,29 +345,29 @@
         </div>
         <div class="container-fluid">
             <div class="row align-items-center scroll-reveal-right">
-                <div class="col-md-10 col-xl-5 mb-4 mx-auto">
-                    <div class="lc-block"><img class="img-fluid" src="assets/img/IMG_7585.jpg" sizes="" width="" height="" alt="Photo by Alessandro Di Credico"></div>
+                <div class="col-12 col-md-10 col-xl-5 mb-4 mx-auto">
+                    <div class="lc-block"><img src="assets/img/IMG_7585.jpg" alt="Photo by Alessandro Di Credico"></div>
                 </div>
                 <div class="col-12 col-xl-5 mx-auto">
                     <div class="mb-2 lc-block"></div>
                     <div class="me-lg-5 mb-3 lc-block">
                         <div>
                             <h1 class="fw-bolder"><strong>Another World</strong></h1>
-                            <p class="lead" style="font-size: 22px;">When we reached the summit, I literally said: "This can't be Sri Lanka." The landscape completely changed. White crystalline rocks scattered everywhere, low hardy vegetation, and vibrant orange and green lichens coating every surface.</p>
+                            <p class="lead">When we reached the summit, I literally said: "This can't be Sri Lanka." The landscape completely changed. White crystalline rocks scattered everywhere, low hardy vegetation, and vibrant orange and green lichens coating every surface.</p>
                         </div>
                     </div>
                     <div class="d-grid d-lg-block gap-3 lc-block"></div>
                 </div>
             </div>
             <div class="row align-items-center scroll-reveal-left">
-                <div class="col-md-10 col-xl-5 mb-4 mx-auto">
-                    <div class="lc-block"><img class="img-fluid" src="assets/img/IMG_7474.jpg" sizes="" width="" height="" alt="Photo by Alessandro Di Credico"></div>
+                <div class="col-12 col-md-10 col-xl-5 mb-4 mx-auto">
+                    <div class="lc-block"><img src="assets/img/IMG_7474.jpg" alt="Photo by Alessandro Di Credico"></div>
                 </div>
                 <div class="col-12 col-xl-5 mx-auto">
                     <div class="mb-2 lc-block"></div>
                     <div class="me-lg-5 mb-3 lc-block">
                         <div>
-                            <p class="lead" style="font-size: 22px;"><br>Standing at 2,036 meters, I felt like I'd been teleported to Nepal. We found wild rhododendrons blooming red flowers so vibrant they looked photoshopped. Locals call them "Ratmal" (රත්මල්). The whole summit was covered in these flowers and craz lichens.<br><br></p>
+                            <p class="lead"><br>Standing at 2,036 meters, I felt like I'd been teleported to Nepal. We found wild rhododendrons blooming red flowers so vibrant they looked photoshopped. Locals call them "Ratmal" (රත්මල්). The whole summit was covered in these flowers and crazy lichens.<br><br></p>
                         </div>
                     </div>
                     <div class="d-grid d-lg-block gap-3 lc-block"></div>

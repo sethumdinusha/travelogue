@@ -25,13 +25,20 @@
             scroll-behavior: smooth;
         }
 
+        body {
+            overflow-x: hidden;
+        }
+
         /* Hero animations */
         .masthead .brand-heading {
             animation: fadeInUp 1s ease-out;
+            font-size: clamp(2.5em, 8vw, 4em);
+            margin-bottom: 1rem;
         }
 
         .masthead .intro-text {
             animation: fadeInUp 1.2s ease-out;
+            font-size: clamp(1.1em, 3vw, 1.5em);
         }
 
         @keyframes fadeInUp {
@@ -58,6 +65,39 @@
 
         #mainNav {
             animation: slideInDown 0.8s ease-out;
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+
+        .navbar-brand {
+            font-size: clamp(1.2em, 3vw, 1.5em);
+            font-weight: bold;
+        }
+
+        .nav-link {
+            font-size: clamp(0.95em, 2vw, 1.1em);
+            transition: color 0.3s ease;
+        }
+
+        .navbar-shrink {
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+        }
+
+        /* Masthead improvements */
+        .masthead {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .intro-body {
+            width: 100%;
+        }
+
+        .intro-body .container {
+            padding-left: 1rem;
+            padding-right: 1rem;
         }
 
         /* Scroll reveal animations */
@@ -97,8 +137,9 @@
         /* Image hover effects */
         .lc-block img, .fancybox img {
             transition: transform 0.4s ease;
-            display: block;
             width: 100%;
+            height: auto;
+            display: block;
         }
 
         .lc-block:hover img, .fancybox:hover img {
@@ -110,77 +151,150 @@
             display: block;
         }
 
-        /* Mobile responsiveness */
+        /* Typography improvements */
+        h1.fw-bolder {
+            font-size: clamp(1.5em, 4vw, 2.5em);
+            color: #ffffff;
+            margin-bottom: clamp(1rem, 2vw, 1.5rem);
+        }
+
+        h2 {
+            font-size: clamp(1.3em, 3.5vw, 2em);
+        }
+
+        .lead {
+            font-size: clamp(1em, 2.5vw, 1.4em);
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        p {
+            font-size: clamp(0.95em, 2vw, 1.1em);
+            line-height: 1.6;
+        }
+
+        /* Content section improvements */
+        .content-section {
+            padding: clamp(3rem, 8vw, 6rem) 0;
+            margin: 0;
+        }
+
+        .container-fluid {
+            padding-left: clamp(0.75rem, 2vw, 2rem);
+            padding-right: clamp(0.75rem, 2vw, 2rem);
+        }
+
+        /* Tablet responsiveness (768px) */
         @media (max-width: 768px) {
-            .masthead .brand-heading {
-                font-size: 2em !important;
-            }
-
-            .masthead .intro-text {
-                font-size: 1em !important;
-            }
-
             .masthead {
-                min-height: 60vh !important;
-                padding-top: 60px !important;
-                padding-bottom: 60px !important;
+                min-height: 80vh;
             }
 
-            .lead {
-                font-size: 16px !important;
-            }
-
-            h1.fw-bolder {
-                font-size: 24px !important;
-            }
-
-            h2 {
-                font-size: 22px !important;
-            }
-
-            .container-fluid {
-                padding-left: 15px !important;
-                padding-right: 15px !important;
+            .container {
+                padding-left: 1rem;
+                padding-right: 1rem;
             }
 
             .row {
-                margin-left: 0 !important;
-                margin-right: 0 !important;
+                margin-left: 0;
+                margin-right: 0;
             }
 
             .col-md-10, .col-xl-5, .col-sm-4 {
-                padding-left: 10px !important;
-                padding-right: 10px !important;
-            }
-
-            p[style*="font-size: 21px"] {
-                font-size: 16px !important;
-            }
-
-            p[style*="font-size: 22px"] {
-                font-size: 16px !important;
-            }
-        }
-
-        @media (max-width: 576px) {
-            .masthead .brand-heading {
-                font-size: 1.8em !important;
+                padding-left: 0.5rem;
+                padding-right: 0.5rem;
             }
 
             .lead {
-                font-size: 15px !important;
+                font-size: 1em;
             }
 
             h1.fw-bolder {
-                font-size: 22px !important;
+                font-size: 1.8em;
             }
 
             h2 {
-                font-size: 20px !important;
+                font-size: 1.4em;
+            }
+
+            .me-lg-5 {
+                margin-right: 0;
+            }
+
+            .pt-10 {
+                padding-top: 2rem;
+            }
+        }
+
+        /* Mobile responsiveness (576px) */
+        @media (max-width: 576px) {
+            .masthead {
+                min-height: 70vh;
+            }
+
+            .masthead .brand-heading {
+                font-size: 1.8em;
+            }
+
+            .container {
+                padding-left: 0.75rem;
+                padding-right: 0.75rem;
+            }
+
+            .container-fluid {
+                padding-left: 0.75rem;
+                padding-right: 0.75rem;
+            }
+
+            .lead {
+                font-size: 0.95em;
+            }
+
+            h1.fw-bolder {
+                font-size: 1.5em;
+            }
+
+            h2 {
+                font-size: 1.2em;
             }
 
             p {
-                font-size: 14px !important;
+                font-size: 0.9em;
+            }
+
+            .lc-block {
+                margin-bottom: 1.5rem;
+            }
+
+            .row {
+                margin-bottom: 1.5rem;
+            }
+
+            .pt-10 {
+                padding-top: 1.5rem;
+            }
+        }
+
+        /* Extra small devices (max 380px) */
+        @media (max-width: 380px) {
+            .masthead {
+                min-height: 60vh;
+            }
+
+            .masthead .brand-heading {
+                font-size: 1.5em;
+            }
+
+            h1.fw-bolder {
+                font-size: 1.2em;
+            }
+
+            .lead {
+                font-size: 0.9em;
+            }
+
+            p {
+                font-size: 0.85em;
             }
         }
     </style>
@@ -199,11 +313,11 @@
             </div>
         </div>
     </nav>
-    <header class="masthead" style="background: url(&quot;assets/img/IMG_7091.jpg&quot;) center / cover;">
-        <div class="intro-body">
-            <div class="container">
+    <header class="masthead" style="background: url(&quot;assets/img/IMG_7091.jpg&quot;) center / cover no-repeat;">
+        <div class="intro-body w-100">
+            <div class="container px-3">
                 <div class="row">
-                    <div class="col-lg-8 mx-auto">
+                    <div class="col-12 col-lg-8 mx-auto">
                         <h1 class="brand-heading">narangala</h1>
                         <p class="intro-text">The Trek We Almost Cancelled</p>
                     </div>
@@ -211,53 +325,52 @@
             </div>
         </div>
     </header>
-    <section class="text-center mt-0 pt-10 mb-0 download-section content-section" style="line-height: 24px;">
+    <section class="text-center mt-0 mb-0 download-section content-section">
         <div class="container-fluid">
             <div class="row align-items-center scroll-reveal" style="position: relative;transition: all 0.5s ease-in-out;">
-                <div class="col-md-10 col-xl-5 mb-4 mx-auto">
-                    <div class="lc-block"><img class="img-fluid mt-4" src="assets/img/IMG_6379.jpg" sizes="" width="" height="" alt="Photo by Alessandro Di Credico"></div>
+                <div class="col-12 col-md-10 col-xl-5 mb-4 mx-auto">
+                    <div class="lc-block"><img src="assets/img/IMG_6379.jpg" alt="Photo by Alessandro Di Credico"></div>
                 </div>
                 <div class="col-12 col-xl-5 mx-auto">
                     <div class="me-lg-5 mb-3 lc-block">
                         <div>
-                            <h1 class="fw-bolder" style="color: #ffffff;">The Day Everything Changed</h1>
-                            <p class="lead" style="font-size: 22px;color: #ffffff;">We planned this the night before - leave around noon, afternoon trek, summit before sunset, the perfect timing we thought. Then 12 PM came with heavy rain. Like proper Sri Lankan monsoon rain. All my friends showed up at the hostel as planned, bags packed, ready to go. But we just stood there watching the rain through the window, debating whether to just unpack and call it off.</p>
+                            <h1 class="fw-bolder">The Day Everything Changed</h1>
+                            <p class="lead">We planned this the night before - leave around noon, afternoon trek, summit before sunset, the perfect timing we thought. Then 12 PM came with heavy rain. Like proper Sri Lankan monsoon rain. All my friends showed up at the hostel as planned, bags packed, ready to go. But we just stood there watching the rain through the window, debating whether to just unpack and call it off.</p>
                         </div>
                     </div>
-                    <p class="lead" style="font-size: 22px;">But here's the thing about adventures - sometimes the best ones happen when everything goes wrong. The rain decreased around 4 PM. We looked at each other and someone said "screw it, let's go." So we did. Wrong time, questionable weather, zero perfect sunset plans. Just vibes and bad decisions.<br><br></p>
+                    <p class="lead">But here's the thing about adventures - sometimes the best ones happen when everything goes wrong. The rain decreased around 4 PM. We looked at each other and someone said "screw it, let's go." So we did. Wrong time, questionable weather, zero perfect sunset plans. Just vibes and bad decisions.<br><br></p>
                     <div class="d-grid d-lg-block gap-3 lc-block"></div>
                 </div>
             </div>
         </div>
         <div class="container-fluid">
             <div class="row align-items-center scroll-reveal-left">
-                <div class="col-md-10 col-xl-5 mb-4 mx-auto">
-                    <div class="lc-block"><img class="img-fluid" src="assets/img/IMG_6398.jpg" sizes="" width="" height="" alt="Photo by Alessandro Di Credico"></div>
+                <div class="col-12 col-md-10 col-xl-5 mb-4 mx-auto">
+                    <div class="lc-block"><img src="assets/img/IMG_6398.jpg" alt="Photo by Alessandro Di Credico"></div>
                 </div>
                 <div class="col-12 col-xl-5 mx-auto">
                     <div class="mb-2 lc-block"></div>
                     <div class="me-lg-5 mb-3 lc-block">
                         <div>
                             <h1 class="fw-bolder">Racing Against Darkness</h1>
-                            <p class="lead" style="font-size: 22px;">We caught a bus from Badulla to the base. Started hiking around 5 PM. Yeah, 5 PM - when most people are heading DOWN from mountains, we were going up. The light was already getting weird, that golden hour glow that photographers love but hikers should probably be wary of.</p>
+                            <p class="lead">We caught a bus from Badulla to the base. Started hiking around 5 PM. Yeah, 5 PM - when most people are heading DOWN from mountains, we were going up. The light was already getting weird, that golden hour glow that photographers love but hikers should probably be wary of.</p>
                         </div>
                     </div>
-                    <p class="lead" style="font-size: 22px;">The first part was actually beautiful. Post-rain freshness, everything smelling like wet earth and vegetation. The trail was clearly marked and honestly pretty easy. We were making good time, joking around, feeling confident. Then the sun started setting for real.</p>
+                    <p class="lead">The first part was actually beautiful. Post-rain freshness, everything smelling like wet earth and vegetation. The trail was clearly marked and honestly pretty easy. We were making good time, joking around, feeling confident. Then the sun started setting for real.</p>
                     <div class="d-grid d-lg-block gap-3 lc-block"></div>
                 </div>
             </div>
         </div>
-        <div class="container-fluid">
             <div class="row align-items-center scroll-reveal-right">
-                <div class="col-md-10 col-xl-5 mb-4 mx-auto">
-                    <div class="lc-block"><img class="img-fluid" src="assets/img/IMG_6426.jpg" sizes="" width="" height="" alt="Photo by Alessandro Di Credico"></div>
+                <div class="col-12 col-md-10 col-xl-5 mb-4 mx-auto">
+                    <div class="lc-block"><img src="assets/img/IMG_6426.jpg" alt="Photo by Alessandro Di Credico"></div>
                 </div>
                 <div class="col-12 col-xl-5 mx-auto">
                     <div class="mb-2 lc-block"></div>
                     <div class="me-lg-5 mb-3 lc-block">
                         <div>
                             <h1 class="fw-bolder">When Darkness Hits Different</h1>
-                            <p class="lead" style="font-size: 22px;">Here's where it got interesting. Darkness came fast. Like really fast. Suddenly we're using phone flashlights trying to find the correct route. The rain had washed away some trail markers, everything looked the same, and we definitely took a few wrong turns.<br>The rocks were slippery from the earlier rain. Not dangerous-slippery, but that annoying kind where every step needs attention. We moved slower, helping each other over tricky sections, calling out slippery spots. It turned into this weird bonding experience - stumbling around in the dark, half-lost, completely trusting your squad.</p>
+                            <p class="lead">Here's where it got interesting. Darkness came fast. Like really fast. Suddenly we're using phone flashlights trying to find the correct route. The rain had washed away some trail markers, everything looked the same, and we definitely took a few wrong turns.<br>The rocks were slippery from the earlier rain. Not dangerous-slippery, but that annoying kind where every step needs attention. We moved slower, helping each other over tricky sections, calling out slippery spots. It turned into this weird bonding experience - stumbling around in the dark, half-lost, completely trusting your squad.</p>
                         </div>
                     </div>
                     <div class="d-grid d-lg-block gap-3 lc-block"></div>
@@ -266,15 +379,15 @@
         </div>
         <div class="container-fluid">
             <div class="row align-items-center mt-0 scroll-reveal-left">
-                <div class="col-md-10 col-xl-5 mb-4 mx-auto">
-                    <div class="lc-block"><img class="img-fluid" src="assets/img/IMG_6407.jpg" sizes="" width="" height="" alt="Photo by Alessandro Di Credico"></div>
+                <div class="col-12 col-md-10 col-xl-5 mb-4 mx-auto">
+                    <div class="lc-block"><img src="assets/img/IMG_6407.jpg" alt="Photo by Alessandro Di Credico"></div>
                 </div>
                 <div class="col-12 col-xl-5 mt-4 mx-auto">
                     <div class="mb-2 lc-block"></div>
                     <div class="me-lg-5 mb-3 lc-block">
                         <div>
                             <h1 class="fw-bolder">Summit Under Stars</h1>
-                            <p class="lead me-0 pe-0 mb-0 pb-0" style="font-size: 22px;">When we finally reached the summit around 7 PM, it was nothing like the photos. No sunset. No dramatic cloud sea. No Instagram-perfect lighting. Just darkness, stars, and the silhouettes of mountains against the night sky.<br>And honestly? It was perfect. We could see the lights of Badulla town twinkling below, scattered village lights across the valley looking like someone spilled glitter. The famous Narangala ridge that everyone photographs in daylight? We experienced it by starlight, which hits different.</p>
+                            <p class="lead me-0 pe-0 mb-0 pb-0">When we finally reached the summit around 7 PM, it was nothing like the photos. No sunset. No dramatic cloud sea. No Instagram-perfect lighting. Just darkness, stars, and the silhouettes of mountains against the night sky.<br>And honestly? It was perfect. We could see the lights of Badulla town twinkling below, scattered village lights across the valley looking like someone spilled glitter. The famous Narangala ridge that everyone photographs in daylight? We experienced it by starlight, which hits different.</p>
                         </div>
                     </div>
                     <div class="d-grid d-lg-block gap-3 lc-block"></div>
@@ -283,45 +396,45 @@
         </div>
         <div class="container-fluid">
             <div class="row align-items-center scroll-reveal-right">
-                <div class="col-md-10 col-xl-5 mb-4 mx-auto">
-                    <div class="lc-block"><img class="img-fluid" src="assets/img/IMG_6390.jpg" sizes="" width="" height="" alt="Photo by Alessandro Di Credico"></div>
+                <div class="col-12 col-md-10 col-xl-5 mb-4 mx-auto">
+                    <div class="lc-block"><img src="assets/img/IMG_6390.jpg" alt="Photo by Alessandro Di Credico"></div>
                 </div>
                 <div class="col-12 col-xl-5 mx-auto">
                     <div class="mb-2 lc-block"></div>
                     <div class="me-lg-5 mb-3 lc-block">
                         <div>
                             <h1 class="fw-bolder">Camping on Dragon Rock</h1>
-                            <p class="lead" style="font-size: 22px;">We set up camp right there at the summit. Six of us packed into an 8-person tent we rented from a university friend - plenty of room, slightly chaotic setup, but that's part of the fun. We rented some pots to make noodles and bought firewood from the village. We didn't have a stove, so fire cooking was the only option, not a choice. But honestly, it made the whole experience better.<br>Getting water was interesting. We stopped at village houses on the way up. Most families have water supplies they'll share - some charge a bit, totally fair. Pro tip: there are no water sources higher up, so stock up at the villages.</p>
+                            <p class="lead">We set up camp right there at the summit. Six of us packed into an 8-person tent we rented from a university friend - plenty of room, slightly chaotic setup, but that's part of the fun. We rented some pots to make noodles and bought firewood from the village. We didn't have a stove, so fire cooking was the only option, not a choice. But honestly, it made the whole experience better.<br>Getting water was interesting. We stopped at village houses on the way up. Most families have water supplies they'll share - some charge a bit, totally fair. Pro tip: there are no water sources higher up, so stock up at the villages.</p>
                         </div>
                     </div>
                     <div class="d-grid d-lg-block gap-3 lc-block"></div>
                 </div>
             </div>
             <div class="row align-items-center scroll-reveal-left">
-                <div class="col-md-10 col-xl-5 mb-4 mx-auto">
-                    <div class="lc-block"><img class="img-fluid" src="assets/img/IMG_6396.jpg" sizes="" width="" height="" alt="Photo by Alessandro Di Credico"></div>
+                <div class="col-12 col-md-10 col-xl-5 mb-4 mx-auto">
+                    <div class="lc-block"><img src="assets/img/IMG_6396.jpg" alt="Photo by Alessandro Di Credico"></div>
                 </div>
                 <div class="col-12 col-xl-5 mx-auto">
                     <div class="mb-2 lc-block"></div>
                     <div class="me-lg-5 mb-3 lc-block">
                         <div>
                             <h1 class="fw-bolder">The Night That Made It Worth It</h1>
-                            <p class="lead" style="font-size: 22px;">Cooking noodles over an open fire at the summit of Narangala, surrounded by friends, the whole valley spread out below us in darkness dotted with lights. The smoke rising, the smell of burning wood mixing with mountain air, everyone huddled around the flames for warmth.<br>The main summit area was actually crowded - tons of groups camping everywhere. So we decided to go to the second upper area. Only two other guys were there. Way better spot, more peaceful, perfect for our vibe.<br>We sat around that fire for hours, talking, telling stories, the kind of deep conversations that only happen on mountains at night. Someone would throw another piece of wood on the fire, sparks flying up toward the stars. The valley lights below looked unreal - like looking down at a galaxy.</p>
+                            <p class="lead">Cooking noodles over an open fire at the summit of Narangala, surrounded by friends, the whole valley spread out below us in darkness dotted with lights. The smoke rising, the smell of burning wood mixing with mountain air, everyone huddled around the flames for warmth.<br>The main summit area was actually crowded - tons of groups camping everywhere. So we decided to go to the second upper area. Only two other guys were there. Way better spot, more peaceful, perfect for our vibe.<br>We sat around that fire for hours, talking, telling stories, the kind of deep conversations that only happen on mountains at night. Someone would throw another piece of wood on the fire, sparks flying up toward the stars. The valley lights below looked unreal - like looking down at a galaxy.</p>
                         </div>
                     </div>
                     <div class="d-grid d-lg-block gap-3 lc-block"></div>
                 </div>
             </div>
             <div class="row align-items-center scroll-reveal-right">
-                <div class="col-md-10 col-xl-5 mb-4 mx-auto">
-                    <div class="lc-block"><img class="img-fluid" src="assets/img/IMG_6455.jpg" sizes="" width="" height="" alt="Photo by Alessandro Di Credico"></div>
+                <div class="col-12 col-md-10 col-xl-5 mb-4 mx-auto">
+                    <div class="lc-block"><img src="assets/img/IMG_6455.jpg" alt="Photo by Alessandro Di Credico"></div>
                 </div>
                 <div class="col-12 col-xl-5 mx-auto">
                     <div class="mb-2 lc-block"></div>
                     <div class="me-lg-5 mb-3 lc-block">
                         <div>
                             <h1 class="fw-bolder">Morning Reality Check</h1>
-                            <p class="lead" style="font-size: 22px;">We woke up hoping for that legendary Narangala sunrise everyone talks about. But the rain from the day before left the climate looking gloomy and rainy. The sky stayed gray, clouds thick and low. No purple-to-pink-to-gold show. No dramatic sunrise moment. Just misty, moody mountain weather.<br>But honestly? The famous ridge walk in that morning mist had its own vibe. We could finally see why it's called Dragon Rock. That narrow spine of rock cutting through the landscape really does look like a dragon's back, and the fog made it even more mysterious.<br>The descent in daylight was completely different from our sketchy climb up. We could actually see the trail, the views, the rock formations. The layers of mountains fading into the misty distance, the green valleys, the patches of forest. Even without the perfect sunrise, seeing everything we'd climbed in darkness was mind-blowing. Turns out we'd missed a lot in the darkness.</p>
+                            <p class="lead">We woke up hoping for that legendary Narangala sunrise everyone talks about. But the rain from the day before left the climate looking gloomy and rainy. The sky stayed gray, clouds thick and low. No purple-to-pink-to-gold show. No dramatic sunrise moment. Just misty, moody mountain weather.<br>But honestly? The famous ridge walk in that morning mist had its own vibe. We could finally see why it's called Dragon Rock. That narrow spine of rock cutting through the landscape really does look like a dragon's back, and the fog made it even more mysterious.<br>The descent in daylight was completely different from our sketchy climb up. We could actually see the trail, the views, the rock formations. The layers of mountains fading into the misty distance, the green valleys, the patches of forest. Even without the perfect sunrise, seeing everything we'd climbed in darkness was mind-blowing. Turns out we'd missed a lot in the darkness.</p>
                         </div>
                     </div>
                     <div class="d-grid d-lg-block gap-3 lc-block"></div>
