@@ -34,9 +34,13 @@
         /* Hero animations */
         .masthead .brand-heading {
             animation: fadeInUp 1s ease-out;
-            font-size: clamp(2.5em, 8vw, 4em);
+            font-size: clamp(1.8em, 8vw, 4em);
             margin-bottom: 1rem;
             text-align: center;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            max-width: 100%;
+            padding: 0 0.5rem;
         }
 
         .masthead .intro-text {
@@ -98,10 +102,13 @@
             align-items: center;
             justify-content: center;
             z-index: 1;
+            overflow: hidden;
         }
 
         .intro-body .container {
             padding: 0 1rem;
+            max-width: 100%;
+            overflow: hidden;
         }
 
         /* Text focus with modern backdrop blur */
@@ -356,6 +363,15 @@
                 background-attachment: scroll;
             }
 
+            .brand-heading {
+                font-size: clamp(1.5em, 7vw, 2.2em) !important;
+                padding: 0 1rem !important;
+            }
+
+            .intro-text {
+                font-size: clamp(0.85em, 3.5vw, 1.1em) !important;
+            }
+
             .intro-body .container {
                 padding: 0 0.75rem;
             }
@@ -459,11 +475,12 @@
             }
 
             .brand-heading {
-                font-size: 1.8em !important;
+                font-size: clamp(1.3em, 6vw, 1.6em) !important;
+                padding: 0 0.75rem !important;
             }
 
             .intro-text {
-                font-size: 0.9em !important;
+                font-size: clamp(0.75em, 3vw, 0.9em) !important;
             }
 
             .btn-default {
