@@ -28,6 +28,7 @@
 
         body {
             overflow-x: hidden;
+            padding-top: 77px;
         }
 
         /* Hero animations */
@@ -35,11 +36,13 @@
             animation: fadeInUp 1s ease-out;
             font-size: clamp(2.5em, 8vw, 4em);
             margin-bottom: 1rem;
+            text-align: center;
         }
 
         .masthead .intro-text {
             animation: fadeInUp 1.2s ease-out;
             font-size: clamp(1.1em, 3vw, 1.5em);
+            text-align: center;
         }
 
         .masthead .btn-circle {
@@ -76,6 +79,29 @@
                 opacity: 1;
                 transform: translateY(0);
             }
+        }
+
+        /* Hero section */
+        .masthead {
+            min-height: 100vh;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .intro-body {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1;
+        }
+
+        .intro-body .container {
+            padding: 0 1rem;
         }
 
         /* Text focus with modern backdrop blur */
@@ -125,7 +151,7 @@
 
         /* Navigation improvements */
         #mainNav {
-            background-color: rgba(0, 0, 0, 0.7);
+            background-color: rgba(0, 0, 0, 0.9) !important;
             transition: all 0.3s ease;
         }
 
@@ -140,8 +166,8 @@
         }
 
         .navbar-shrink {
-            padding-top: 0.5rem;
-            padding-bottom: 0.5rem;
+            padding-top: 0.5rem !important;
+            padding-bottom: 0.5rem !important;
         }
 
         /* Card improvements */
@@ -157,6 +183,7 @@
             display: flex;
             flex-direction: column;
             flex-grow: 1;
+            padding: 1.5rem;
         }
 
         .card:hover {
@@ -168,6 +195,8 @@
             transition: transform 0.4s ease;
             height: auto;
             min-height: 200px;
+            width: 100%;
+            display: block;
         }
 
         .card:hover img {
@@ -177,6 +206,7 @@
         .card-title {
             font-size: clamp(1rem, 2.5vw, 1.3em);
             flex-grow: 1;
+            margin: 0.75rem 0;
         }
 
         .card-text {
@@ -187,11 +217,13 @@
         .btn-default, .btn-primary-outline {
             transition: all 0.3s ease;
             font-size: clamp(0.9em, 2vw, 1em);
-            padding: clamp(0.5rem, 1vw, 0.75rem) clamp(1rem, 2vw, 1.5rem);
-            min-height: 44px;
-            display: flex;
+            padding: clamp(0.5rem, 1vw, 0.75rem) clamp(1rem, 2vw, 1.5rem) !important;
+            min-height: 44px !important;
+            display: inline-flex;
             align-items: center;
             justify-content: center;
+            gap: 0.5rem;
+            white-space: nowrap;
         }
 
         .btn-default:hover, .btn-primary-outline:hover {
@@ -245,7 +277,7 @@
 
         /* Section improvements */
         .content-section {
-            padding: clamp(3rem, 8vw, 6rem) 0;
+            padding: clamp(3rem, 8vw, 6rem) 1rem;
             margin: 0;
         }
 
@@ -257,13 +289,23 @@
 
         /* Tablet responsiveness (768px) */
         @media (max-width: 768px) {
+            body {
+                padding-top: 60px;
+            }
+
+            .masthead {
+                min-height: 100vh;
+                background-attachment: scroll;
+            }
+
             .container {
-                padding-left: 1rem;
-                padding-right: 1rem;
+                padding-left: 1rem !important;
+                padding-right: 1rem !important;
             }
 
             .text-focus {
                 border-radius: 10px;
+                padding: 1.5rem 1rem;
             }
 
             .banner-social-buttons {
@@ -276,11 +318,11 @@
 
             .banner-social-buttons .list-inline-item {
                 display: block;
-                margin: 0;
+                margin: 0 !important;
             }
 
             .btn-default {
-                width: 100%;
+                width: 100% !important;
             }
 
             #about {
@@ -297,35 +339,51 @@
                 padding-top: 3rem;
                 padding-bottom: 3rem;
             }
+
+            .card-body {
+                padding: 1rem;
+            }
         }
 
         /* Mobile responsiveness (576px) */
         @media (max-width: 576px) {
+            body {
+                padding-top: 60px;
+            }
+
             .masthead {
-                min-height: 80vh;
+                min-height: 90vh;
+                background-attachment: scroll;
+            }
+
+            .intro-body .container {
+                padding: 0 0.75rem;
             }
 
             .container {
-                padding-left: 0.75rem;
-                padding-right: 0.75rem;
+                padding-left: 0.75rem !important;
+                padding-right: 0.75rem !important;
             }
 
             .text-focus {
                 border-radius: 8px;
-                padding: 1.25rem 1rem;
+                padding: 1.25rem 0.75rem;
             }
 
             .text-focus h2 {
                 margin: 0.5rem 0;
+                font-size: 1.4em;
             }
 
             .text-focus h3 {
                 margin: 0.75rem 0;
+                font-size: 1.1em;
             }
 
             .text-focus p {
                 text-align: left;
                 margin-bottom: 1rem;
+                font-size: 0.95em;
             }
 
             .text-focus ul {
@@ -336,6 +394,7 @@
 
             .text-focus ul li {
                 text-align: left;
+                font-size: 0.9em;
             }
 
             .navbar-nav {
@@ -343,7 +402,7 @@
             }
 
             .nav-link {
-                padding: 0.5rem 0;
+                padding: 0.5rem 0 !important;
             }
 
             .banner-social-buttons {
@@ -353,13 +412,17 @@
             }
 
             .btn-default {
-                width: 100%;
+                width: 100% !important;
                 font-size: 0.9em;
-                padding: 0.6rem 0.75rem;
+                padding: 0.6rem 0.75rem !important;
             }
 
-            .row-cols-md-2, .row-cols-xl-3 {
-                --bs-columns: 1;
+            .card {
+                margin-bottom: 1.5rem;
+            }
+
+            .card-body {
+                padding: 0.75rem;
             }
 
             .card img {
@@ -367,49 +430,77 @@
             }
 
             #about, #contact {
-                padding-top: 2rem;
-                padding-bottom: 2rem;
+                padding-top: 2.5rem !important;
+                padding-bottom: 2.5rem !important;
             }
 
             #download {
-                padding-top: 2rem;
-                padding-bottom: 2rem;
+                padding-top: 2rem !important;
+                padding-bottom: 2rem !important;
             }
 
             .gy-4 {
                 --bs-gutter-y: 1.5rem;
             }
+
+            .content-section {
+                padding: 2rem 0.75rem;
+            }
         }
 
         /* Extra small devices (max 380px) */
         @media (max-width: 380px) {
+            body {
+                padding-top: 56px;
+            }
+
+            .masthead {
+                min-height: 85vh;
+            }
+
             .brand-heading {
-                font-size: 2em;
+                font-size: 1.8em !important;
             }
 
             .intro-text {
-                font-size: 0.95em;
+                font-size: 0.9em !important;
             }
 
             .btn-default {
-                font-size: 0.85em;
-                padding: 0.5rem 0.5rem;
+                font-size: 0.8em !important;
+                padding: 0.5rem !important;
             }
 
             .text-focus {
-                padding: 1rem 0.75rem;
+                padding: 0.75rem;
             }
 
             .container {
-                padding-left: 0.5rem;
-                padding-right: 0.5rem;
+                padding-left: 0.5rem !important;
+                padding-right: 0.5rem !important;
+            }
+
+            .content-section {
+                padding: 1.5rem 0.5rem;
+            }
+
+            .card-body {
+                padding: 0.75rem;
+            }
+
+            h2 {
+                font-size: 1.2em;
+            }
+
+            h3 {
+                font-size: 1em;
             }
         }
     </style>
 </head>
 
 <body id="page-top" data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="77">
-    <header class="mb-0 masthead" style="background: url(&quot;assets/img/IMG_2405.jpg&quot;) center / cover no-repeat, var(--bs-secondary-color);min-height: 100vh;display: flex;align-items: center;justify-content: center;">
+    <header class="masthead" style="background: url('assets/img/IMG_2405.jpg') center / cover no-repeat;">
         <div class="intro-body w-100">
             <div class="container px-3 px-md-4">
                 <div class="row">
@@ -421,14 +512,16 @@
             </div>
         </div>
     </header>
-    <nav class="navbar navbar-expand-md fixed-top mb-0 pb-2" id="mainNav">
-        <div class="container"><a class="navbar-brand" href="#" style="font-family: Aclonica, sans-serif;">travelogue</a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navbarResponsive" type="button" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation" value="Menu"><i class="fa fa-bars"></i></button>
+    <nav class="navbar navbar-expand-md fixed-top" id="mainNav">
+        <div class="container-fluid px-3">
+            <a class="navbar-brand" href="#" style="font-family: Aclonica, sans-serif;">travelogue</a>
+            <button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navbarResponsive" type="button" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation" value="Menu"><i class="fa fa-bars"></i></button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item nav-link"><a class="nav-link active" href="index.html">Home</a></li>
-                    <li class="nav-item nav-link"><a class="nav-link active" href="#about">About</a></li>
-                    <li class="nav-item nav-link"><a class="nav-link" href="#download">Blogs</a></li>
-                    <li class="nav-item nav-link"><a class="nav-link" href="#contact">contact</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#download">Blogs</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
                 </ul>
             </div>
         </div>

@@ -27,6 +27,7 @@
 
         body {
             overflow-x: hidden;
+            padding-top: 77px;
         }
 
         /* Hero animations */
@@ -34,11 +35,13 @@
             animation: fadeInUp 1s ease-out;
             font-size: clamp(2.5em, 8vw, 4em);
             margin-bottom: 1rem;
+            text-align: center;
         }
 
         .masthead .intro-text {
             animation: fadeInUp 1.2s ease-out;
             font-size: clamp(1.1em, 3vw, 1.5em);
+            text-align: center;
         }
 
         @keyframes fadeInUp {
@@ -65,7 +68,7 @@
 
         #mainNav {
             animation: slideInDown 0.8s ease-out;
-            background-color: rgba(0, 0, 0, 0.7);
+            background-color: rgba(0, 0, 0, 0.9) !important;
         }
 
         .navbar-brand {
@@ -79,25 +82,31 @@
         }
 
         .navbar-shrink {
-            padding-top: 0.5rem;
-            padding-bottom: 0.5rem;
+            padding-top: 0.5rem !important;
+            padding-bottom: 0.5rem !important;
         }
 
         /* Masthead improvements */
         .masthead {
             min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
         }
 
         .intro-body {
             width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1;
         }
 
         .intro-body .container {
-            padding-left: 1rem;
-            padding-right: 1rem;
+            padding: 0 1rem;
         }
 
         /* Scroll reveal animations */
@@ -186,115 +195,150 @@
 
         /* Tablet responsiveness (768px) */
         @media (max-width: 768px) {
+            body {
+                padding-top: 60px !important;
+            }
+
             .masthead {
                 min-height: 80vh;
+                background-attachment: scroll !important;
             }
 
             .container {
-                padding-left: 1rem;
-                padding-right: 1rem;
+                padding-left: 1rem !important;
+                padding-right: 1rem !important;
             }
 
             .row {
-                margin-left: 0;
-                margin-right: 0;
+                margin-left: 0 !important;
+                margin-right: 0 !important;
             }
 
             .col-md-10, .col-xl-5, .col-sm-4 {
-                padding-left: 0.5rem;
-                padding-right: 0.5rem;
+                padding-left: 0.5rem !important;
+                padding-right: 0.5rem !important;
             }
 
             .lead {
-                font-size: 1em;
+                font-size: 1em !important;
             }
 
             h1.fw-bolder {
-                font-size: 1.8em;
+                font-size: 1.8em !important;
             }
 
             h2 {
-                font-size: 1.4em;
+                font-size: 1.4em !important;
             }
 
             .me-lg-5 {
-                margin-right: 0;
+                margin-right: 0 !important;
             }
 
             .pt-10 {
-                padding-top: 2rem;
+                padding-top: 2rem !important;
             }
         }
 
         /* Mobile responsiveness (576px) */
         @media (max-width: 576px) {
+            body {
+                padding-top: 60px !important;
+            }
+
             .masthead {
                 min-height: 70vh;
+                background-attachment: scroll !important;
             }
 
             .masthead .brand-heading {
-                font-size: 1.8em;
+                font-size: 1.8em !important;
             }
 
             .container {
-                padding-left: 0.75rem;
-                padding-right: 0.75rem;
+                padding-left: 0.75rem !important;
+                padding-right: 0.75rem !important;
             }
 
             .container-fluid {
-                padding-left: 0.75rem;
-                padding-right: 0.75rem;
+                padding-left: 0.75rem !important;
+                padding-right: 0.75rem !important;
             }
 
             .lead {
-                font-size: 0.95em;
+                font-size: 0.95em !important;
             }
 
             h1.fw-bolder {
-                font-size: 1.5em;
+                font-size: 1.5em !important;
             }
 
             h2 {
-                font-size: 1.2em;
+                font-size: 1.2em !important;
             }
 
             p {
-                font-size: 0.9em;
+                font-size: 0.9em !important;
             }
 
             .lc-block {
-                margin-bottom: 1.5rem;
+                margin-bottom: 1.5rem !important;
+                width: 100% !important;
+            }
+
+            .lc-block img, .fancybox img {
+                width: 100% !important;
+                height: auto !important;
+                max-width: 100% !important;
             }
 
             .row {
-                margin-bottom: 1.5rem;
+                margin-bottom: 1.5rem !important;
             }
 
             .pt-10 {
-                padding-top: 1.5rem;
+                padding-top: 1.5rem !important;
+            }
+
+            .btn {
+                min-height: 44px !important;
+                display: inline-flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+                padding: 0.5rem 1rem !important;
             }
         }
 
         /* Extra small devices (max 380px) */
         @media (max-width: 380px) {
+            body {
+                padding-top: 56px !important;
+            }
+
             .masthead {
                 min-height: 60vh;
+                background-attachment: scroll !important;
             }
 
             .masthead .brand-heading {
-                font-size: 1.5em;
+                font-size: 1.5em !important;
             }
 
             h1.fw-bolder {
-                font-size: 1.2em;
+                font-size: 1.2em !important;
             }
 
             .lead {
-                font-size: 0.9em;
+                font-size: 0.9em !important;
             }
 
             p {
-                font-size: 0.85em;
+                font-size: 0.85em !important;
+            }
+
+            .lc-block img, .fancybox img {
+                width: 100% !important;
+                height: auto !important;
             }
         }
     </style>
@@ -305,15 +349,15 @@
         <div class="container"><a class="navbar-brand" href="#" style="font-family: Aclonica, sans-serif;"><strong>travelogue</strong></a><button data-bs-toggle="collapse" data-bs-target="#navbarResponsive" class="navbar-toggler" type="button" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation" value="Menu"><i class="fas fa-bars"></i></button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item nav-link"><a class="nav-link active" href="index.html">Home</a></li>
-                    <li class="nav-item nav-link"><a class="nav-link active" href="index.html#about">About</a></li>
-                    <li class="nav-item nav-link"><a class="nav-link" href="index.html#download">Blogs</a></li>
-                    <li class="nav-item nav-link"><a class="nav-link" href="index.html#contact">contact</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="index.html#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#download">Blogs</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#contact">contact</a></li>
                 </ul>
             </div>
         </div>
     </nav>
-    <header class="masthead" style="background: url(&quot;assets/img/IMG_7091.jpg&quot;) center / cover no-repeat;">
+    <header class="masthead" style="background: url('assets/img/IMG_7091.jpg') center / cover no-repeat;">
         <div class="intro-body w-100">
             <div class="container px-3">
                 <div class="row">
