@@ -21,16 +21,9 @@
     <link rel="stylesheet" href="assets/css/Carousel_Image_Slider.css">
     <link rel="stylesheet" href="assets/css/Lightbox-Gallery-baguetteBox.min.css">
     <style>
-        html {
-            scroll-behavior: smooth;
-        }
+        html { scroll-behavior: smooth; }
+        body { overflow-x: hidden; padding-top: 77px; }
 
-        body {
-            overflow-x: hidden;
-            padding-top: 77px;
-        }
-
-        /* Hero animations */
         .masthead .brand-heading {
             animation: fadeInUp 1s ease-out;
             font-size: clamp(1.5em, 8vw, 4em);
@@ -44,56 +37,27 @@
             box-sizing: border-box;
             overflow: hidden;
         }
-
         .masthead .intro-text {
             animation: fadeInUp 1.2s ease-out;
             font-size: clamp(1.1em, 3vw, 1.5em);
             text-align: center;
         }
-
         @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
         }
-
         @keyframes slideInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-100%);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(-100%); }
+            to { opacity: 1; transform: translateY(0); }
         }
-
         #mainNav {
             animation: slideInDown 0.8s ease-out;
             background-color: rgba(0, 0, 0, 0.9) !important;
         }
+        .navbar-brand { font-size: clamp(1.2em, 3vw, 1.5em); font-weight: bold; }
+        .nav-link { font-size: clamp(0.95em, 2vw, 1.1em); transition: color 0.3s ease; }
+        .navbar-shrink { padding-top: 0.5rem !important; padding-bottom: 0.5rem !important; }
 
-        .navbar-brand {
-            font-size: clamp(1.2em, 3vw, 1.5em);
-            font-weight: bold;
-        }
-
-        .nav-link {
-            font-size: clamp(0.95em, 2vw, 1.1em);
-            transition: color 0.3s ease;
-        }
-
-        .navbar-shrink {
-            padding-top: 0.5rem !important;
-            padding-bottom: 0.5rem !important;
-        }
-
-        /* Masthead improvements */
         .masthead {
             min-height: 100vh;
             display: flex !important;
@@ -104,7 +68,6 @@
             background-attachment: fixed;
             overflow-x: hidden;
         }
-
         .intro-body {
             width: 100%;
             display: flex;
@@ -114,281 +77,63 @@
             overflow: hidden;
             overflow-x: hidden;
         }
+        .intro-body .container { padding: 0 15px; max-width: 100%; overflow: hidden; box-sizing: border-box; }
 
-        .intro-body .container {
-            padding: 0 15px;
-            max-width: 100%;
-            overflow: hidden;
-            box-sizing: border-box;
-        }
+        .scroll-reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.8s ease, transform 0.8s ease; }
+        .scroll-reveal.visible { opacity: 1; transform: translateY(0); }
+        .scroll-reveal-left { opacity: 0; transform: translateX(-50px); transition: opacity 0.8s ease, transform 0.8s ease; }
+        .scroll-reveal-left.visible { opacity: 1; transform: translateX(0); }
+        .scroll-reveal-right { opacity: 0; transform: translateX(50px); transition: opacity 0.8s ease, transform 0.8s ease; }
+        .scroll-reveal-right.visible { opacity: 1; transform: translateX(0); }
 
-        /* Scroll reveal animations */
-        .scroll-reveal {
-            opacity: 0;
-            transform: translateY(40px);
-            transition: opacity 0.8s ease, transform 0.8s ease;
-        }
+        .lc-block img, .fancybox img { transition: transform 0.4s ease; width: 100%; height: auto; display: block; }
+        .lc-block:hover img, .fancybox:hover img { transform: scale(1.05); }
+        .fancybox { overflow: hidden; display: block; }
 
-        .scroll-reveal.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
+        h1.fw-bolder { font-size: clamp(1.5em, 4vw, 2.5em); color: #ffffff; margin-bottom: clamp(1rem, 2vw, 1.5rem); }
+        h2 { font-size: clamp(1.3em, 3.5vw, 2em); }
+        .lead { font-size: clamp(1em, 2.5vw, 1.4em); color: #ffffff; line-height: 1.6; }
+        p { font-size: clamp(0.95em, 2vw, 1.1em); line-height: 1.6; }
 
-        .scroll-reveal-left {
-            opacity: 0;
-            transform: translateX(-50px);
-            transition: opacity 0.8s ease, transform 0.8s ease;
-        }
+        .content-section { padding: clamp(3rem, 8vw, 6rem) 0; margin: 0; }
+        .container-fluid { padding-left: clamp(0.75rem, 2vw, 2rem); padding-right: clamp(0.75rem, 2vw, 2rem); }
 
-        .scroll-reveal-left.visible {
-            opacity: 1;
-            transform: translateX(0);
-        }
-
-        .scroll-reveal-right {
-            opacity: 0;
-            transform: translateX(50px);
-            transition: opacity 0.8s ease, transform 0.8s ease;
-        }
-
-        .scroll-reveal-right.visible {
-            opacity: 1;
-            transform: translateX(0);
-        }
-
-        /* Image hover effects */
-        .lc-block img, .fancybox img {
-            transition: transform 0.4s ease;
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        .lc-block:hover img, .fancybox:hover img {
-            transform: scale(1.05);
-        }
-
-        .fancybox {
-            overflow: hidden;
-            display: block;
-        }
-
-        /* Typography improvements */
-        h1.fw-bolder {
-            font-size: clamp(1.5em, 4vw, 2.5em);
-            color: #ffffff;
-            margin-bottom: clamp(1rem, 2vw, 1.5rem);
-        }
-
-        h2 {
-            font-size: clamp(1.3em, 3.5vw, 2em);
-        }
-
-        .lead {
-            font-size: clamp(1em, 2.5vw, 1.4em);
-            color: #ffffff;
-            line-height: 1.6;
-        }
-
-        p {
-            font-size: clamp(0.95em, 2vw, 1.1em);
-            line-height: 1.6;
-        }
-
-        /* Content section improvements */
-        .content-section {
-            padding: clamp(3rem, 8vw, 6rem) 0;
-            margin: 0;
-        }
-
-        .container-fluid {
-            padding-left: clamp(0.75rem, 2vw, 2rem);
-            padding-right: clamp(0.75rem, 2vw, 2rem);
-        }
-
-        /* Tablet responsiveness (768px) */
         @media (max-width: 768px) {
-            body {
-                padding-top: 60px !important;
-                overflow-x: hidden !important;
-            }
-
-            .masthead {
-                min-height: 80vh;
-                background-attachment: scroll !important;
-                overflow-x: hidden !important;
-            }
-
-            .brand-heading {
-                font-size: clamp(2rem, 12vw, 3rem) !important;
-                max-width: 100% !important;
-                width: 100% !important;
-                padding: 0 15px !important;
-                box-sizing: border-box !important;
-                overflow: hidden !important;
-                text-align: center !important;
-            }
-
-            .container {
-                padding-left: 1rem !important;
-                padding-right: 1rem !important;
-            }
-
-            .row {
-                margin-left: 0 !important;
-                margin-right: 0 !important;
-            }
-
-            .col-md-10, .col-xl-5, .col-sm-4 {
-                padding-left: 0.5rem !important;
-                padding-right: 0.5rem !important;
-            }
-
-            .lead {
-                font-size: 1em !important;
-            }
-
-            h1.fw-bolder {
-                font-size: 1.8em !important;
-            }
-
-            h2 {
-                font-size: 1.4em !important;
-            }
-
-            .me-lg-5 {
-                margin-right: 0 !important;
-            }
-
-            .pt-10 {
-                padding-top: 2rem !important;
-            }
+            body { padding-top: 60px !important; overflow-x: hidden !important; }
+            .masthead { min-height: 80vh; background-attachment: scroll !important; overflow-x: hidden !important; }
+            .brand-heading { font-size: clamp(2rem, 12vw, 3rem) !important; }
+            .container { padding-left: 1rem !important; padding-right: 1rem !important; }
+            .row { margin-left: 0 !important; margin-right: 0 !important; }
+            .col-md-10, .col-xl-5, .col-sm-4 { padding-left: 0.5rem !important; padding-right: 0.5rem !important; }
+            .lead { font-size: 1em !important; }
+            h1.fw-bolder { font-size: 1.8em !important; }
+            h2 { font-size: 1.4em !important; }
+            .me-lg-5 { margin-right: 0 !important; }
         }
-
-        /* Mobile responsiveness (576px) */
         @media (max-width: 576px) {
-            body {
-                padding-top: 60px !important;
-                overflow-x: hidden !important;
-            }
-
-            .masthead {
-                min-height: 70vh;
-                background-attachment: scroll !important;
-                overflow-x: hidden !important;
-            }
-
-            .masthead .brand-heading {
-                font-size: clamp(1.5rem, 10vw, 2.5rem) !important;
-                max-width: 100% !important;
-                width: 100% !important;
-                padding: 0 15px !important;
-                box-sizing: border-box !important;
-                overflow: hidden !important;
-                text-align: center !important;
-            }
-
-            .container {
-                padding-left: 0.75rem !important;
-                padding-right: 0.75rem !important;
-            }
-
-            .container-fluid {
-                padding-left: 0.75rem !important;
-                padding-right: 0.75rem !important;
-            }
-
-            .lead {
-                font-size: 0.95em !important;
-            }
-
-            h1.fw-bolder {
-                font-size: 1.5em !important;
-            }
-
-            h2 {
-                font-size: 1.2em !important;
-            }
-
-            p {
-                font-size: 0.9em !important;
-            }
-
-            .lc-block {
-                margin-bottom: 1.5rem !important;
-                width: 100% !important;
-            }
-
-            .lc-block img, .fancybox img {
-                width: 100% !important;
-                height: auto !important;
-                max-width: 100% !important;
-            }
-
-            .row {
-                margin-bottom: 1.5rem !important;
-            }
-
-            .pt-10 {
-                padding-top: 1.5rem !important;
-            }
-
-            .btn {
-                min-height: 44px !important;
-                display: inline-flex !important;
-                align-items: center !important;
-                justify-content: center !important;
-                padding: 0.5rem 1rem !important;
-            }
+            body { padding-top: 60px !important; overflow-x: hidden !important; }
+            .masthead { min-height: 70vh; background-attachment: scroll !important; }
+            .masthead .brand-heading { font-size: clamp(1.5rem, 10vw, 2.5rem) !important; }
+            .container { padding-left: 0.75rem !important; padding-right: 0.75rem !important; }
+            .lead { font-size: 0.95em !important; }
+            h1.fw-bolder { font-size: 1.5em !important; }
+            h2 { font-size: 1.2em !important; }
+            p { font-size: 0.9em !important; }
+            .lc-block { margin-bottom: 1.5rem !important; width: 100% !important; }
+            .lc-block img, .fancybox img { width: 100% !important; height: auto !important; max-width: 100% !important; }
         }
-
-        /* Extra small devices (max 380px) */
         @media (max-width: 380px) {
-            body {
-                padding-top: 56px !important;
-                overflow-x: hidden !important;
-            }
-
-            .masthead {
-                min-height: 60vh;
-                background-attachment: scroll !important;
-                overflow-x: hidden !important;
-            }
-
-            .masthead .brand-heading {
-                font-size: clamp(1.2rem, 8vw, 1.8rem) !important;
-                max-width: 100% !important;
-                width: 100% !important;
-                padding: 0 10px !important;
-                box-sizing: border-box !important;
-                overflow: hidden !important;
-                text-align: center !important;
-                letter-spacing: -0.5px !important;
-            }
-
-            h1.fw-bolder {
-                font-size: 1.2em !important;
-            }
-
-            .lead {
-                font-size: 0.9em !important;
-            }
-
-            p {
-                font-size: 0.85em !important;
-            }
-
-            .lc-block img, .fancybox img {
-                width: 100% !important;
-                height: auto !important;
-            }
+            body { padding-top: 56px !important; overflow-x: hidden !important; }
+            .masthead { min-height: 60vh; background-attachment: scroll !important; }
+            .masthead .brand-heading { font-size: clamp(1.2rem, 8vw, 1.8rem) !important; }
+            h1.fw-bolder { font-size: 1.2em !important; }
+            .lead { font-size: 0.9em !important; }
+            p { font-size: 0.85em !important; }
         }
     </style>
 </head>
 
 <body id="page-top" data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="77">
-
-    <!-- ═══ NAV — identical to your other pages ═══ -->
     <nav class="navbar navbar-expand-md fixed-top" id="mainNav">
         <div class="container">
             <a class="navbar-brand" href="#" style="font-family: Aclonica, sans-serif;"><strong>travelogue</strong></a>
@@ -406,210 +151,211 @@
         </div>
     </nav>
 
-    <!-- ═══ HERO — replace QM_hero.jpg with your actual hero photo ═══ -->
+    <!-- HERO — replace assets/img/1.jpg with your actual hero photo -->
     <header class="masthead" style="background: url('assets/img/1.jpg') center / cover no-repeat;">
         <div class="intro-body w-100">
             <div class="container px-3">
                 <div class="row">
                     <div class="col-12 col-lg-8 mx-auto">
                         <h1 class="brand-heading">Queen Mountain</h1>
-                        <p class="intro-text">The Summit That Earns Its Name</p>
+                        <p class="intro-text">The Summit We Found in the Morning Mist</p>
                     </div>
                 </div>
             </div>
         </div>
     </header>
 
-    <!-- ═══ CONTENT ═══ -->
     <section class="text-center mt-0 mb-0 download-section content-section">
 
-        <!-- Section 1 -->
+        <!-- Section 1 — Getting There -->
         <div class="container-fluid">
             <div class="row align-items-center scroll-reveal" style="position: relative; transition: all 0.5s ease-in-out;">
                 <div class="col-12 col-md-10 col-xl-5 mb-4 mx-auto">
-                    <!-- Replace QM_001.jpg with your photo -->
-                    <div class="lc-block"><img src="assets/img/QM_001.jpg" alt="Queen Mountain Trail Start"></div>
+                    <!-- Replace with your photo -->
+                    <div class="lc-block"><img src="assets/img/QM_001.jpg" alt="Queen Mountain Journey"></div>
                 </div>
                 <div class="col-12 col-xl-5 mx-auto">
                     <div class="me-lg-5 mb-3 lc-block">
                         <div>
-                            <h1 class="fw-bolder">The Decision to Go Up</h1>
-                            <p class="lead">Queen Mountain had been sitting on the list for a while. Not the easiest one to tick off — it's tucked away, not on the usual tourist trail, and the route isn't something you just Google and figure out in five minutes. But that's exactly what made it interesting. When the group finally said "this weekend," there wasn't much debate. Bags were packed the night before.</p>
+                            <h1 class="fw-bolder">The Bus That Didn't Quite Make It</h1>
+                            <p class="lead">March 15th. Four of us, bags packed, ready to go. The plan was simple — catch a bus from Passara to Pitamaruwa and start the hike from there. Simple plans always have a twist though. We got the bus, settled in, watching the roads get narrower and narrower. Then the bus stopped. Road was broken. That was as far as it was going.</p>
                         </div>
                     </div>
-                    <p class="lead">The drive out was quiet in the best way. Roads getting narrower, houses getting fewer, the sky getting bigger. By the time we reached the start point you could already feel the altitude in the air — that cool clean feeling that makes you breathe a little deeper.</p>
+                    <p class="lead">So we walked. More than expected, more than planned, more than anyone's legs were ready for before the actual hike even started. Not ideal. But here's the thing — it turned into a warm-up nobody asked for but everyone needed. Pro tip if you're planning this: don't go from Passara. Go to Meegahakiula bus stand and get the Pitamaruwa bus from there. Better road, better chance the bus actually gets you where you need to go.<br><br></p>
                     <div class="d-grid d-lg-block gap-3 lc-block"></div>
                 </div>
             </div>
         </div>
 
-        <!-- Section 2 -->
+        <!-- Section 2 — Starting Late -->
         <div class="container-fluid">
             <div class="row align-items-center scroll-reveal-left">
                 <div class="col-12 col-md-10 col-xl-5 mb-4 mx-auto">
-                    <!-- Replace QM_002.jpg with your photo -->
-                    <div class="lc-block"><img src="assets/img/QM_002.jpg" alt="Queen Mountain Forest Path"></div>
+                    <!-- Replace with your photo -->
+                    <div class="lc-block"><img src="assets/img/QM_002.jpg" alt="Queen Mountain Trail Start"></div>
                 </div>
                 <div class="col-12 col-xl-5 mx-auto">
                     <div class="mb-2 lc-block"></div>
                     <div class="me-lg-5 mb-3 lc-block">
                         <div>
-                            <h1 class="fw-bolder">Through the Cloud Forest</h1>
-                            <p class="lead">The lower trail winds through dense forest — the kind where the canopy closes overhead and everything goes green and quiet. Mossy trunks, ferns everywhere, the occasional sound of water somewhere below the trail. It's slow going but never boring.</p>
+                            <h1 class="fw-bolder">3 PM Start. Classic Us.</h1>
+                            <p class="lead">By the time we actually started hiking it was 3 PM. Three in the afternoon. Same energy as the Narangala late start, different mountain. The trail itself was easy — no crazy technical sections, nothing that felt dangerous. Just a steady climb upward through the kind of landscape that makes you forget you're tired.</p>
                         </div>
                     </div>
-                    <p class="lead">Then the forest opens up and the real climb starts. Steep sections that make your legs know they're working, rocky scrambles where you're using your hands as much as your feet. The kind of terrain that demands full attention — no zoning out, no autopilot. Just you and the mountain having a conversation.</p>
+                    <p class="lead">The extra walking from the bus stop had already warmed up the legs, so we hit a decent pace. Four people moving together, conversation flowing, the afternoon light doing that thing where everything looks golden. The trail was manageable, no guide needed, just follow the path and keep going up.</p>
                     <div class="d-grid d-lg-block gap-3 lc-block"></div>
                 </div>
             </div>
         </div>
 
-        <!-- Section 3 -->
+        <!-- Section 3 — Mist Moving In -->
         <div class="container-fluid">
             <div class="row align-items-center scroll-reveal-right">
                 <div class="col-12 col-md-10 col-xl-5 mb-4 mx-auto">
-                    <!-- Replace QM_003.jpg with your photo -->
-                    <div class="lc-block"><img src="assets/img/QM_003.jpg" alt="Queen Mountain Ridge Views"></div>
+                    <!-- Replace with your photo -->
+                    <div class="lc-block"><img src="assets/img/QM_003.jpg" alt="Queen Mountain Mist"></div>
                 </div>
                 <div class="col-12 col-xl-5 mx-auto">
                     <div class="mb-2 lc-block"></div>
                     <div class="me-lg-5 mb-3 lc-block">
                         <div>
-                            <h1 class="fw-bolder">Where the Views Begin</h1>
-                            <p class="lead">The first ridge break stops you in your tracks. Below you — layers of hills rolling into the distance, tea estates like green patchwork, little villages you'd never know existed from any road. Above — more mountain. Always more mountain.</p>
+                            <h1 class="fw-bolder">When the Mist Showed Up</h1>
+                            <p class="lead">The higher we went, the thicker it got. Mist rolling in, clouds sitting low, the views that should have been opening up just disappearing into white. We kept going, expecting it to clear. It didn't. By the time we were in the upper sections, visibility was short and everything had that moody, atmospheric thing going on that looks great in photos but makes finding the perfect campspot genuinely difficult.</p>
                         </div>
                     </div>
-                    <p class="lead">These in-between moments on the climb are underrated. Not the summit, not the start — just the middle, where you're sweating and breathing hard and the view keeps getting better and you realize this is exactly where you're supposed to be right now.</p>
+                    <p class="lead">We walked around up there longer than planned, looking for a good flat section. The mist had a way of making everywhere look the same. Eventually we just picked a spot, made the call, and set up the tent. Sometimes you stop looking for perfect and just make where you are work.</p>
                     <div class="d-grid d-lg-block gap-3 lc-block"></div>
                 </div>
             </div>
         </div>
 
-        <!-- Section 4 -->
+        <!-- Section 4 — Camp and Dinner -->
         <div class="container-fluid">
             <div class="row align-items-center scroll-reveal-left">
                 <div class="col-12 col-md-10 col-xl-5 mb-4 mx-auto">
-                    <!-- Replace QM_004.jpg with your photo -->
-                    <div class="lc-block"><img src="assets/img/QM_004.jpg" alt="Queen Mountain Summit Arrival"></div>
+                    <!-- Replace with your photo -->
+                    <div class="lc-block"><img src="assets/img/QM_004.jpg" alt="Queen Mountain Camp"></div>
                 </div>
                 <div class="col-12 col-xl-5 mx-auto">
                     <div class="mb-2 lc-block"></div>
                     <div class="me-lg-5 mb-3 lc-block">
                         <div>
-                            <h1 class="fw-bolder">The Summit Moment</h1>
-                            <p class="lead me-0 pe-0 mb-0 pb-0">When you finally get there, Queen Mountain doesn't disappoint. The summit is open and exposed — wind, sky, 360-degree views. On a clear day you can see mountains you haven't climbed yet and immediately start making plans. The feeling of being that high up, having earned it with your legs, is something that doesn't translate into photos but you remember it clearly.</p>
+                            <h1 class="fw-bolder">Rice, Soya, and the Good Chef</h1>
+                            <p class="lead me-0 pe-0 mb-0 pb-0">Turns out we had a good chef in the group. Like actually good. Dinner was rice, soya meat, and sausages cooked on a stove up the mountain. Proper food. Not noodles, not crackers — actual dinner. The kind of meal that feels twice as good when you've been walking all day and there's mist all around you and the temperature is dropping.</p>
                         </div>
                     </div>
-                    <p class="mt-0 pt-0 lead">We stayed longer than planned. Nobody was in a rush to leave. Someone passed around food, we sat on the rocks and talked about nothing and everything. That golden hour light hit the landscape and we all went quiet for a while, just watching.</p>
+                    <p class="mt-0 pt-1 lead">We had brought 23 litres of water between four people. Twenty three. Way too much. We were carrying that weight up the whole climb for a one-night stay. Lesson learned — 4–5 litres per person for an overnight is more than enough. Our backs definitely had opinions about the extra weight. Morning was noodles and bread, simple and quick, because the summit was waiting and we'd been too misty and cloud-covered the night before to properly find it.<br><br></p>
                     <div class="d-grid d-lg-block gap-3 lc-block"></div>
                 </div>
             </div>
         </div>
 
-        <!-- Section 5 -->
+        <!-- Section 5 — The Rough Night -->
         <div class="container-fluid">
             <div class="row align-items-center scroll-reveal-right">
                 <div class="col-12 col-md-10 col-xl-5 mb-4 mx-auto">
-                    <!-- Replace QM_005.jpg with your photo -->
-                    <div class="lc-block"><img src="assets/img/QM_005.jpg" alt="Queen Mountain Sunset"></div>
+                    <!-- Replace with your photo -->
+                    <div class="lc-block"><img src="assets/img/QM_005.jpg" alt="Queen Mountain Night"></div>
                 </div>
                 <div class="col-12 col-xl-5 mx-auto">
                     <div class="mb-2 lc-block"></div>
                     <div class="me-lg-5 mb-3 lc-block">
                         <div>
-                            <h1 class="fw-bolder">Sunset from the Top</h1>
-                            <p class="lead" style="font-size: 22px;">The sunset from Queen Mountain is the kind that makes you question your life choices — specifically why you don't do this every weekend. The sky does everything. Pink, then orange, then that deep purple that fades into the first stars. The hills below lose their detail and become shapes. The temperature drops fast.</p>
+                            <h1 class="fw-bolder">Two Hours of "Sleep"</h1>
+                            <p class="lead">The tent floor was not flat. At all. You don't fully appreciate a flat surface until you're trying to sleep on a slope at altitude with mist outside and your whole body slowly sliding. We slept about two hours — maybe. The rest of the night was a cycle of almost sleeping, waking up, adjusting position, almost sleeping again. It wasn't cold enough to be miserable, just uncomfortable enough to be awake.</p>
                         </div>
                     </div>
+                    <p class="lead">The kind of night that's genuinely terrible while it's happening and becomes a great story the moment you're safely descended. By the time morning light started coming through the tent, everyone was equally unrested and equally ready to go find that peak we'd missed the evening before.</p>
                     <div class="d-grid d-lg-block gap-3 lc-block"></div>
                 </div>
             </div>
         </div>
 
-        <!-- Section 6 -->
+        <!-- Section 6 — Finding the Peak -->
         <div class="container-fluid">
             <div class="row align-items-center scroll-reveal-left">
                 <div class="col-12 col-md-10 col-xl-5 mb-4 mx-auto">
-                    <!-- Replace QM_006.jpg with your photo -->
-                    <div class="lc-block"><img src="assets/img/QM_006.jpg" alt="Queen Mountain Group"></div>
+                    <!-- Replace with your photo -->
+                    <div class="lc-block"><img src="assets/img/QM_006.jpg" alt="Queen Mountain Summit"></div>
                 </div>
                 <div class="col-12 col-xl-5 mx-auto">
                     <div class="mb-2 lc-block"></div>
                     <div class="me-lg-5 mb-3 lc-block">
                         <div>
-                            <h1 class="fw-bolder">The Descent and After</h1>
-                            <p class="lead">Going down is its own experience. Your knees let you know they have opinions. The forest that felt new on the way up now feels familiar — you notice different things, spot landmarks you missed, move through it with slightly more confidence. By the time you reach the bottom your legs are done but your head is full.</p>
+                            <h1 class="fw-bolder">Morning. Summit. Worth It.</h1>
+                            <p class="lead">Morning came and so did the clarity. The heavy mist had softened overnight into something lighter, and we packed up camp, ate breakfast, and went looking for the actual peak. We found it. And when we did, the sleep deprivation, the extra walking from the bus, the 23 litres of water — all of it just disappeared.</p>
                         </div>
                     </div>
-                    <p class="lead">The conversation on the way back is always the best kind. You've shared something with these people. You're tired in a good way. Someone suggests food and everyone agrees immediately. The mountain sits behind you getting smaller and you're already thinking about next time.</p>
+                    <p class="lead">Standing at the top of Queen Mountain in the morning mist, four people who'd barely slept on a slope, looking out at the landscape slowly revealing itself as the clouds shifted — that's the moment the whole trip was for. Not perfectly planned. Not perfectly executed. But perfectly real. That's what makes it worth putting in a blog.</p>
                     <div class="d-grid d-lg-block gap-3 lc-block"></div>
                 </div>
             </div>
         </div>
 
-        <!-- ═══ PHOTO GALLERY ═══ -->
+        <!-- PHOTO GALLERY -->
         <div class="container scroll-reveal" style="margin-top: 40px;">
             <h2 class="mb-4">Photo Gallery</h2>
             <div class="row flex-box flex-wrap-wrap">
-                <!-- Replace each QM_G*.jpg with your actual gallery photos -->
+                <!-- Replace each filename with your actual gallery photos -->
                 <div class="col col-sm-4 flex-box flex-justify-center flex-align-center mb-3">
                     <a class="fancybox" rel="gallery1" title="Queen Mountain Trail" href="assets/img/QM_G01.jpg">
                         <img class="img-fluid" src="assets/img/QM_G01.jpg" alt="Queen Mountain Trail">
                     </a>
                 </div>
                 <div class="col col-sm-4 flex-box flex-justify-center flex-align-center mb-3">
-                    <a class="fancybox" rel="gallery1" title="Forest Path" href="assets/img/QM_G02.jpg">
-                        <img class="img-fluid" src="assets/img/QM_G02.jpg" alt="Forest Path">
+                    <a class="fancybox" rel="gallery1" title="Mist Coming In" href="assets/img/QM_G02.jpg">
+                        <img class="img-fluid" src="assets/img/QM_G02.jpg" alt="Mist">
                     </a>
                 </div>
                 <div class="col col-sm-4 flex-box flex-justify-center flex-align-center mb-3">
-                    <a class="fancybox" rel="gallery1" title="Summit Views" href="assets/img/QM_G03.jpg">
-                        <img class="img-fluid" src="assets/img/QM_G03.jpg" alt="Summit Views">
+                    <a class="fancybox" rel="gallery1" title="Camp Setup" href="assets/img/QM_G03.jpg">
+                        <img class="img-fluid" src="assets/img/QM_G03.jpg" alt="Camp">
                     </a>
                 </div>
                 <div class="col col-sm-4 flex-box flex-justify-center flex-align-center mb-3">
-                    <a class="fancybox" rel="gallery1" title="Ridge Walk" href="assets/img/QM_G04.jpg">
-                        <img class="img-fluid" src="assets/img/QM_G04.jpg" alt="Ridge Walk">
+                    <a class="fancybox" rel="gallery1" title="Dinner on the Mountain" href="assets/img/QM_G04.jpg">
+                        <img class="img-fluid" src="assets/img/QM_G04.jpg" alt="Dinner">
                     </a>
                 </div>
                 <div class="col col-sm-4 flex-box flex-justify-center flex-align-center mb-3">
-                    <a class="fancybox" rel="gallery1" title="Golden Hour" href="assets/img/QM_G05.jpg">
-                        <img class="img-fluid" src="assets/img/QM_G05.jpg" alt="Golden Hour">
+                    <a class="fancybox" rel="gallery1" title="Morning Summit" href="assets/img/QM_G05.jpg">
+                        <img class="img-fluid" src="assets/img/QM_G05.jpg" alt="Summit">
                     </a>
                 </div>
                 <div class="col col-sm-4 flex-box flex-justify-center flex-align-center mb-3">
                     <a class="fancybox" rel="gallery1" title="The Squad" href="assets/img/QM_G06.jpg">
-                        <img class="img-fluid" src="assets/img/QM_G06.jpg" alt="The Squad">
+                        <img class="img-fluid" src="assets/img/QM_G06.jpg" alt="Squad">
                     </a>
                 </div>
             </div>
         </div>
 
-        <!-- ═══ ESSENTIAL TIPS ═══ -->
+        <!-- ESSENTIAL TIPS -->
         <div class="col-lg-8 mb-0 pb-0 mx-auto scroll-reveal" style="margin-top: 40px;">
             <h2>Essential Tips</h2>
-            <p style="font-size: 21px;"><strong>Getting There:</strong> Base yourself in the nearest town and arrange a vehicle to the trailhead early — the road gets rough and you want daylight for the full climb. Split the vehicle cost with your group.</p>
-            <p style="font-size: 21px;"><strong>What to Bring:</strong> Good grip hiking shoes are non-negotiable — the rocky sections demand it. Bring at least 2–3 liters of water per person, there are no reliable water sources on the upper trail. Pack layers, the summit gets cold fast especially after sunset. Headlamps if you're going near golden hour.</p>
-            <p style="font-size: 21px;"><strong>About the Trail:</strong> The lower forest section is moderate. The upper rocky section is steep and requires some scrambling. Take your time on the rocks — they can be slippery after any moisture. The trail is manageable without a guide if you're experienced, but a local guide adds safety and context.</p>
-            <p style="font-size: 21px;"><strong>Key Info:</strong> Elevation gain is significant • Allow 5–7 hours for the full hike including summit time • Difficulty: Moderate to Challenging • Best in the dry season but the mist season has its own magic • Ideal group size 4–6 people • Go earlier than you think you need to.</p>
-            <p style="font-size: 21px;"><strong>Real Talk:</strong> This hike asks something of you. It's not a casual stroll. But it gives back more than it takes — the views, the quiet, the feeling of having genuinely earned a summit. Respect the mountain and it shows you something worth seeing.</p>
+            <p style="font-size: 21px;"><strong>Getting There:</strong> Don't make our mistake — skip the Passara bus. Go to Meegahakiula bus stand and catch the Pitamaruwa bus from there. The road is better and you'll actually arrive closer to the trailhead. We don't know the exact bus times, so check locally when you get there.</p>
+            <p style="font-size: 21px;"><strong>What to Bring:</strong> Good hiking shoes — the trail is easy but you'll be walking more than expected. Water — but don't overdo it like us (23L for 4 people overnight is way too much). 4–5L per person is enough. A stove for proper meals if you're camping overnight. Warm layers — it gets misty and cool up top. A good flat campsite takes effort to find, so scout before setting up tent.</p>
+            <p style="font-size: 21px;"><strong>About Camping:</strong> Find a flat spot before it gets dark — this is critical. The upper area has some tricky uneven ground and setting up in poor light on a slope is exactly as bad as it sounds. Check your tent floor before committing to a spot. Sleep quality matters more than you think when you have a summit to find in the morning.</p>
+            <p style="font-size: 21px;"><strong>Key Info:</strong> Easy trail difficulty • Start before noon if possible — a 3 PM start is risky for finding your campspot in good light • Overnight camping recommended to catch the summit in morning clarity • Misty conditions are common — embrace it or plan for the dry season • 4 is a good group size • The summit is worth every wrong decision that gets you there.</p>
+            <p style="font-size: 21px;"><strong>Real Talk:</strong> The trail is easy. The logistics are the tricky part — getting the right bus, carrying the right amount of water, finding a flat campsite before dark. Get those right and Queen Mountain rewards you. Get them wrong (like us) and you still have a great story.</p>
         </div>
 
-        <!-- ═══ WOULD I DO IT AGAIN ═══ -->
+        <!-- WOULD I DO IT AGAIN -->
         <div class="col-lg-8 mb-0 pb-0 mx-auto scroll-reveal">
             <h2 class="mt-6"><strong>Would I Do It Again?</strong></h2>
             <p class="mb-0" style="font-size: 21px; text-align: center;">
-                Without question. Queen Mountain is one of those hikes that stays with you. Not because it was easy — it wasn't. Not because everything went perfectly — it didn't. But because of the way the summit feels when you get there, the people you share it with, and the version of yourself you discover somewhere between the trailhead and the top.<br><br>
-                Sri Lanka has mountains that are famous and mountains that are known. Queen Mountain sits in that second category — the ones you find out about from someone who's been, not from a tourist board. That's exactly the kind of place worth the effort.<br><br>
-                If you're the kind of person who reads travelogues about hiking instead of just hiking, this is your sign. Stop reading. Start planning.<br><br>
+                Yes. But with a better bus route, half the water, and a very careful inspection of the tent floor situation before dark.<br><br>
+                Queen Mountain doesn't get the same attention as the famous peaks. You won't find it in every hiking guide. You find out about it from someone who's been, and then you go, and then you become that person telling someone else about it. That's exactly the kind of mountain worth climbing.<br><br>
+                We got the wrong bus, walked extra, started late, got swallowed by mist, couldn't find the summit until morning, slept about two hours on an uneven surface, carried way too much water, and still — the moment we stood at that summit in the morning with the mist clearing around us — it was completely worth it. Every bad decision included.<br><br>
+                The mist that hid everything the night before made the morning reveal feel earned. We didn't just walk up and see it. We waited for it. And it showed up.<br><br>
             </p>
-            <p class="mt-0 mb-0" style="font-size: 22px; font-weight: bold; font-family: Agbalumo, serif;">Get good people together. Lace up properly. And just go.</p>
+            <p class="mt-0 mb-0" style="font-size: 22px; font-weight: bold; font-family: Agbalumo, serif;">Get the right bus. Bring less water. Find a flat spot. And just go.</p>
         </div>
 
-        <!-- ═══ FOOTER META ═══ -->
+        <!-- FOOTER META -->
         <div class="row mt-8 pt-0">
             <div class="col-lg-8 mx-auto">
-                <p>2024 • Queen Mountain, Sri Lanka</p>
+                <p>March 2025 • Queen Mountain, Sri Lanka</p>
                 <ul class="list-inline banner-social-buttons">
                     <li class="list-inline-item">
                         <a class="btn btn-primary btn-lg btn-default" role="button" href="index.html">
@@ -630,7 +376,6 @@
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script>
-        // Scroll reveal animation — identical to your other pages
         function revealOnScroll() {
             const reveals = document.querySelectorAll('.scroll-reveal, .scroll-reveal-left, .scroll-reveal-right');
             reveals.forEach(element => {
@@ -651,6 +396,5 @@
     <script src="assets/js/grayscale.js"></script>
     <script src="assets/js/Lightbox-Gallery-baguetteBox.min.js"></script>
     <script src="assets/js/Lightbox-Gallery.js"></script>
-
 </body>
 </html>
