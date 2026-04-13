@@ -21,353 +21,68 @@
     <link rel="stylesheet" href="assets/css/Carousel_Image_Slider.css">
     <link rel="stylesheet" href="assets/css/Lightbox-Gallery-baguetteBox.min.css">
     <style>
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            overflow-x: hidden;
-            padding-top: 77px;
-        }
-
-        /* Hero animations */
-        .masthead .brand-heading {
-            animation: fadeInUp 1s ease-out;
-            font-size: clamp(1.5em, 8vw, 4em);
-            margin-bottom: 1rem;
-            text-align: center;
-            word-wrap: break-word;
-            overflow-wrap: break-word;
-            max-width: 100%;
-            width: 100%;
-            padding: 0 15px;
-            box-sizing: border-box;
-            overflow: hidden;
-        }
-
-        .masthead .intro-text {
-            animation: fadeInUp 1.2s ease-out;
-            font-size: clamp(1.1em, 3vw, 1.5em);
-            text-align: center;
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes slideInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-100%);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        #mainNav {
-            animation: slideInDown 0.8s ease-out;
-            background-color: rgba(0, 0, 0, 0.9) !important;
-        }
-
-        .navbar-brand {
-            font-size: clamp(1.2em, 3vw, 1.5em);
-            font-weight: bold;
-        }
-
-        .nav-link {
-            font-size: clamp(0.95em, 2vw, 1.1em);
-            transition: color 0.3s ease;
-        }
-
-        .navbar-shrink {
-            padding-top: 0.5rem !important;
-            padding-bottom: 0.5rem !important;
-        }
-
-        /* Masthead improvements */
-        .masthead {
-            min-height: 100vh;
-            display: flex !important;
-            align-items: center !important;
-            justify-content: center !important;
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            overflow-x: hidden;
-        }
-
-        .intro-body {
-            width: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 1;
-            overflow: hidden;
-            overflow-x: hidden;
-        }
-
-        .intro-body .container {
-            padding: 0 15px;
-            max-width: 100%;
-            overflow: hidden;
-            box-sizing: border-box;
-        }
-
-        /* Scroll reveal animations */
-        .scroll-reveal {
-            opacity: 0;
-            transform: translateY(40px);
-            transition: opacity 0.8s ease, transform 0.8s ease;
-        }
-
-        .scroll-reveal.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .scroll-reveal-left {
-            opacity: 0;
-            transform: translateX(-50px);
-            transition: opacity 0.8s ease, transform 0.8s ease;
-        }
-
-        .scroll-reveal-left.visible {
-            opacity: 1;
-            transform: translateX(0);
-        }
-
-        .scroll-reveal-right {
-            opacity: 0;
-            transform: translateX(50px);
-            transition: opacity 0.8s ease, transform 0.8s ease;
-        }
-
-        .scroll-reveal-right.visible {
-            opacity: 1;
-            transform: translateX(0);
-        }
-
-        /* Image hover effects */
-        .lc-block img {
-            transition: transform 0.4s ease;
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        .lc-block:hover img {
-            transform: scale(1.05);
-        }
-
-        /* Typography improvements */
-        h1.fw-bolder {
-            font-size: clamp(1.5em, 4vw, 2.5em);
-            color: #ffffff;
-            margin-bottom: clamp(1rem, 2vw, 1.5rem);
-        }
-
-        h2 {
-            font-size: clamp(1.3em, 3.5vw, 2em);
-        }
-
-        .lead {
-            font-size: clamp(1em, 2.5vw, 1.4em);
-            color: #ffffff;
-            line-height: 1.6;
-        }
-
-        p {
-            font-size: clamp(0.95em, 2vw, 1.1em);
-            line-height: 1.6;
-        }
-
-        /* Content section improvements */
-        .content-section {
-            padding: clamp(3rem, 8vw, 6rem) 0;
-            margin: 0;
-        }
-
-        .container-fluid {
-            padding-left: clamp(0.75rem, 2vw, 2rem);
-            padding-right: clamp(0.75rem, 2vw, 2rem);
-        }
-
-        /* Tablet responsiveness (768px) */
+        html { scroll-behavior: smooth; }
+        body { overflow-x: hidden; padding-top: 77px; }
+        .masthead .brand-heading { animation: fadeInUp 1s ease-out; font-size: clamp(1.5em, 8vw, 4em); margin-bottom: 1rem; text-align: center; word-wrap: break-word; overflow-wrap: break-word; max-width: 100%; width: 100%; padding: 0 15px; box-sizing: border-box; overflow: hidden; }
+        .masthead .intro-text { animation: fadeInUp 1.2s ease-out; font-size: clamp(1.1em, 3vw, 1.5em); text-align: center; }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(50px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes slideInDown { from { opacity: 0; transform: translateY(-100%); } to { opacity: 1; transform: translateY(0); } }
+        #mainNav { animation: slideInDown 0.8s ease-out; background-color: rgba(0, 0, 0, 0.9) !important; }
+        .navbar-brand { font-size: clamp(1.2em, 3vw, 1.5em); font-weight: bold; }
+        .nav-link { font-size: clamp(0.95em, 2vw, 1.1em); transition: color 0.3s ease; }
+        .navbar-shrink { padding-top: 0.5rem !important; padding-bottom: 0.5rem !important; }
+        .masthead { min-height: 100vh; display: flex !important; align-items: center !important; justify-content: center !important; background-size: cover; background-position: center; background-attachment: fixed; overflow-x: hidden; }
+        .intro-body { width: 100%; display: flex; align-items: center; justify-content: center; z-index: 1; overflow: hidden; overflow-x: hidden; }
+        .intro-body .container { padding: 0 15px; max-width: 100%; overflow: hidden; box-sizing: border-box; }
+        .scroll-reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.8s ease, transform 0.8s ease; }
+        .scroll-reveal.visible { opacity: 1; transform: translateY(0); }
+        .scroll-reveal-left { opacity: 0; transform: translateX(-50px); transition: opacity 0.8s ease, transform 0.8s ease; }
+        .scroll-reveal-left.visible { opacity: 1; transform: translateX(0); }
+        .scroll-reveal-right { opacity: 0; transform: translateX(50px); transition: opacity 0.8s ease, transform 0.8s ease; }
+        .scroll-reveal-right.visible { opacity: 1; transform: translateX(0); }
+        .lc-block img { transition: transform 0.4s ease; width: 100%; height: auto; display: block; }
+        .lc-block:hover img { transform: scale(1.05); }
+        h1.fw-bolder { font-size: clamp(1.5em, 4vw, 2.5em); color: #ffffff; margin-bottom: clamp(1rem, 2vw, 1.5rem); }
+        h2 { font-size: clamp(1.3em, 3.5vw, 2em); }
+        .lead { font-size: clamp(1em, 2.5vw, 1.4em); color: #ffffff; line-height: 1.6; }
+        p { font-size: clamp(0.95em, 2vw, 1.1em); line-height: 1.6; }
+        .content-section { padding: clamp(3rem, 8vw, 6rem) 0; margin: 0; }
+        .container-fluid { padding-left: clamp(0.75rem, 2vw, 2rem); padding-right: clamp(0.75rem, 2vw, 2rem); }
         @media (max-width: 768px) {
-            body {
-                padding-top: 60px !important;
-                overflow-x: hidden !important;
-            }
-
-            .masthead {
-                min-height: 80vh;
-                background-attachment: scroll !important;
-                overflow-x: hidden !important;
-
-            .brand-heading {
-                font-size: clamp(2rem, 12vw, 3rem) !important;
-                max-width: 100% !important;
-                width: 100% !important;
-                padding: 0 15px !important;
-                box-sizing: border-box !important;
-                overflow: hidden !important;
-                text-align: center !important;
-            }
-
-            .container {
-                padding-left: 1rem !important;
-                padding-right: 1rem !important;
-            }
-
-            .row {
-                margin-left: 0 !important;
-                margin-right: 0 !important;
-            }
-
-            .col-md-10, .col-xl-5 {
-                padding-left: 0.5rem !important;
-                padding-right: 0.5rem !important;
-            }
-
-            .lead {
-                font-size: 1em !important;
-            }
-
-            h1.fw-bolder {
-                font-size: 1.8em !important;
-            }
-
-            h2 {
-                font-size: 1.4em !important;
-            }
-
-            .me-lg-5 {
-                margin-right: 0 !important;
-            }
+            body { padding-top: 60px !important; overflow-x: hidden !important; }
+            .masthead { min-height: 80vh; background-attachment: scroll !important; overflow-x: hidden !important; }
+            .brand-heading { font-size: clamp(2rem, 12vw, 3rem) !important; max-width: 100% !important; width: 100% !important; padding: 0 15px !important; box-sizing: border-box !important; overflow: hidden !important; text-align: center !important; }
+            .container { padding-left: 1rem !important; padding-right: 1rem !important; }
+            .row { margin-left: 0 !important; margin-right: 0 !important; }
+            .col-md-10, .col-xl-5 { padding-left: 0.5rem !important; padding-right: 0.5rem !important; }
+            .lead { font-size: 1em !important; }
+            h1.fw-bolder { font-size: 1.8em !important; }
+            h2 { font-size: 1.4em !important; }
+            .me-lg-5 { margin-right: 0 !important; }
         }
-
-        /* Mobile responsiveness (576px) */
         @media (max-width: 576px) {
-            body {
-                padding-top: 60px !important;
-                overflow-x: hidden !important;
-            }
-
-            .masthead {
-                min-height: 70vh;
-                background-attachment: scroll !important;
-                overflow-x: hidden !important;
-            }
-
-            .masthead .brand-heading {
-                font-size: clamp(1.5rem, 10vw, 2.5rem) !important;
-                max-width: 100% !important;
-                width: 100% !important;
-                padding: 0 15px !important;
-                box-sizing: border-box !important;
-                overflow: hidden !important;
-                text-align: center !important;
-            }
-
-            .container {
-                padding-left: 0.75rem !important;
-                padding-right: 0.75rem !important;
-            }
-
-            .container-fluid {
-                padding-left: 0.75rem !important;
-                padding-right: 0.75rem !important;
-            }
-
-            .lead {
-                font-size: 0.95em !important;
-            }
-
-            h1.fw-bolder {
-                font-size: 1.5em !important;
-            }
-
-            h2 {
-                font-size: 1.2em !important;
-            }
-
-            p {
-                font-size: 0.9em !important;
-            }
-
-            .lc-block {
-                margin-bottom: 1.5rem !important;
-                width: 100% !important;
-            }
-
-            .lc-block img {
-                width: 100% !important;
-                height: auto !important;
-                max-width: 100% !important;
-            }
-
-            .row {
-                margin-bottom: 1.5rem !important;
-            }
-
-            .btn {
-                min-height: 44px !important;
-                display: inline-flex !important;
-                align-items: center !important;
-                justify-content: center !important;
-                padding: 0.5rem 1rem !important;
-            }
+            body { padding-top: 60px !important; overflow-x: hidden !important; }
+            .masthead { min-height: 70vh; background-attachment: scroll !important; overflow-x: hidden !important; }
+            .masthead .brand-heading { font-size: clamp(1.5rem, 10vw, 2.5rem) !important; max-width: 100% !important; width: 100% !important; padding: 0 15px !important; box-sizing: border-box !important; overflow: hidden !important; text-align: center !important; }
+            .container { padding-left: 0.75rem !important; padding-right: 0.75rem !important; }
+            .container-fluid { padding-left: 0.75rem !important; padding-right: 0.75rem !important; }
+            .lead { font-size: 0.95em !important; }
+            h1.fw-bolder { font-size: 1.5em !important; }
+            h2 { font-size: 1.2em !important; }
+            p { font-size: 0.9em !important; }
+            .lc-block { margin-bottom: 1.5rem !important; width: 100% !important; }
+            .lc-block img { width: 100% !important; height: auto !important; max-width: 100% !important; }
+            .row { margin-bottom: 1.5rem !important; }
+            .btn { min-height: 44px !important; display: inline-flex !important; align-items: center !important; justify-content: center !important; padding: 0.5rem 1rem !important; }
         }
-
-        /* Extra small devices (max 380px) */
         @media (max-width: 380px) {
-            body {
-                padding-top: 56px !important;
-                overflow-x: hidden !important;
-            }
-
-            .masthead {
-                min-height: 60vh;
-                background-attachment: scroll !important;
-                overflow-x: hidden !important;
-            }
-
-            .masthead .brand-heading {
-                font-size: clamp(1.2rem, 8vw, 1.8rem) !important;
-                max-width: 100% !important;
-                width: 100% !important;
-                padding: 0 10px !important;
-                box-sizing: border-box !important;
-                overflow: hidden !important;
-                text-align: center !important;
-                letter-spacing: -0.5px !important;
-            }
-
-            h1.fw-bolder {
-                font-size: 1.2em !important;
-            }
-
-            .lead {
-                font-size: 0.9em !important;
-            }
-
-            p {
-                font-size: 0.85em !important;
-            }
-
-            .lc-block img {
-                width: 100% !important;
-                height: auto !important;
-            }
+            body { padding-top: 56px !important; overflow-x: hidden !important; }
+            .masthead { min-height: 60vh; background-attachment: scroll !important; overflow-x: hidden !important; }
+            .masthead .brand-heading { font-size: clamp(1.2rem, 8vw, 1.8rem) !important; max-width: 100% !important; width: 100% !important; padding: 0 10px !important; box-sizing: border-box !important; overflow: hidden !important; text-align: center !important; letter-spacing: -0.5px !important; }
+            h1.fw-bolder { font-size: 1.2em !important; }
+            .lead { font-size: 0.9em !important; }
+            p { font-size: 0.85em !important; }
+            .lc-block img { width: 100% !important; height: auto !important; }
         }
     </style>
 </head>
@@ -504,7 +219,7 @@
                     <div class="me-lg-5 mb-3 lc-block">
                         <div>
                             <h1 class="fw-bolder"><strong>The Ancient Well</strong></h1>
-                            <p class="lead" style="font-size: 22px;">We discovered ancient wells—circular openings in the rock that villagers built to collect rainwater. We found one with a perfect circular opening and put the camera at the bottom, all eight of us gathered around the rim looking down. One of the best photosfrom the whole trip.<br><br></p>
+                            <p class="lead" style="font-size: 22px;">We discovered ancient wells—circular openings in the rock that villagers built to collect rainwater. We found one with a perfect circular opening and put the camera at the bottom, all eight of us gathered around the rim looking down. One of the best photos from the whole trip.<br><br></p>
                         </div>
                     </div>
                     <div class="d-grid d-lg-block gap-3 lc-block"></div>
@@ -513,16 +228,7 @@
         </div>
         <div class="container mt-0 pt-0">
             <div class="col-lg-8 mx-auto">
-                <h2></h2>
-                <p class="ms-0"></p>
-                <p></p>
-                <h2></h2>
-                <p></p>
-                <h2></h2>
-                <p></p>
-                <p></p>
-                <h2 class="mt-6"></h2>
-                <p style="text-align: left;"></p>
+                <h2></h2><p class="ms-0"></p><p></p><h2></h2><p></p><h2></h2><p></p><p></p><h2 class="mt-6"></h2><p style="text-align: left;"></p>
             </div>
         </div>
         <div class="col-lg-8 mb-0 pb-0 mx-auto scroll-reveal">
@@ -536,19 +242,9 @@
             <p class="mb-0" style="font-size: 21px;text-align: center;">In a heartbeat. But I'd wake up on time, Namunukula isn't Sigiriya with its crowds or Ella Rock with its Instagram fame. This is raw, challenging, unpredictable, and absolutely worth every slippery step. The rain, the mud, even the scary midnight moment—all of it made it real.&nbsp;<br>We missed the bus, got soaked, slipped in mud, had a health scare, and it was still one of the best weekends of my life.<br><br><br></p>
             <p class="mt-0" style="font-size: 21px;font-weight: bold;"><em>If you're thinking about it, stop thinking and just plan it. Get good friends together. Set multiple alarms. And bring those anti-leech socks.</em></p>
         </div>
-        <h2 class="mt-4"></h2>
-        <p></p>
-        <p></p>
-        <p style="margin-top:30px;"></p>
+        <h2 class="mt-4"></h2><p></p><p></p><p style="margin-top:30px;"></p>
     </section>
     <section class="text-center mt-0 content-section" id="contact">
-        <div data-bss-type="author-nav">
-            <div class="author-sethum-dinusha" data-bss-type="author-loop-item">
-                <div class="d-flex">
-                    <div class="ps-3"></div>
-                </div>
-            </div>
-        </div>
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 mx-auto">
@@ -566,21 +262,14 @@
         </div>
     </footer>
     <script>
-        // Scroll reveal animation
         function revealOnScroll() {
             const reveals = document.querySelectorAll('.scroll-reveal, .scroll-reveal-left, .scroll-reveal-right');
-            
             reveals.forEach(element => {
                 const elementTop = element.getBoundingClientRect().top;
                 const windowHeight = window.innerHeight;
-                
-                if (elementTop < windowHeight - 100) {
-                    element.classList.add('visible');
-                }
+                if (elementTop < windowHeight - 100) { element.classList.add('visible'); }
             });
         }
-
-        // Run on load and scroll
         window.addEventListener('scroll', revealOnScroll);
         window.addEventListener('load', revealOnScroll);
     </script>
@@ -592,5 +281,4 @@
     <script src="assets/js/Lightbox-Gallery-baguetteBox.min.js"></script>
     <script src="assets/js/Lightbox-Gallery.js"></script>
 </body>
-
 </html>
