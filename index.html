@@ -34,16 +34,17 @@
         /* Hero animations */
         .masthead .brand-heading {
             animation: fadeInUp 1s ease-out;
-            font-size: clamp(1.5em, 8vw, 4em);
+            font-size: clamp(2rem, 10vw, 4em);
             margin-bottom: 1rem;
             text-align: center;
             word-wrap: break-word;
             overflow-wrap: break-word;
+            white-space: normal;
             max-width: 100%;
             width: 100%;
             padding: 0 15px;
             box-sizing: border-box;
-            overflow: hidden;
+            display: block;
         }
 
         .masthead .intro-text {
@@ -107,7 +108,6 @@
             justify-content: center;
             z-index: 1;
             overflow: hidden;
-            overflow-x: hidden;
         }
 
         .intro-body .container {
@@ -311,6 +311,7 @@
                 min-height: 100vh;
                 background-attachment: scroll;
                 overflow-x: hidden !important;
+            }
 
             .brand-heading {
                 font-size: clamp(2rem, 12vw, 3rem) !important;
@@ -318,7 +319,7 @@
                 width: 100% !important;
                 padding: 0 15px !important;
                 box-sizing: border-box !important;
-                overflow: hidden !important;
+                white-space: normal !important;
                 text-align: center !important;
             }
 
@@ -383,13 +384,14 @@
             }
 
             .brand-heading {
-                font-size: clamp(1.5rem, 10vw, 2.5rem) !important;
+                font-size: clamp(1.8rem, 11vw, 2.5rem) !important;
                 max-width: 100% !important;
                 width: 100% !important;
                 padding: 0 15px !important;
                 box-sizing: border-box !important;
-                overflow: hidden !important;
+                white-space: normal !important;
                 text-align: center !important;
+                letter-spacing: normal !important;
             }
 
             .intro-text {
@@ -502,12 +504,12 @@
             }
 
             .brand-heading {
-                font-size: clamp(1.2rem, 8vw, 1.8rem) !important;
+                font-size: clamp(1.5rem, 10vw, 2rem) !important;
                 max-width: 100% !important;
                 width: 100% !important;
                 padding: 0 10px !important;
                 box-sizing: border-box !important;
-                overflow: hidden !important;
+                white-space: normal !important;
                 text-align: center !important;
                 letter-spacing: -0.5px !important;
             }
